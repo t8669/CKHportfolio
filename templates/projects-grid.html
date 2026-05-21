@@ -1,0 +1,20 @@
+{{#each projects}}
+          <a
+            href="./projects/{{slug}}.html"
+            class="project-card{{#if featured}} featured{{/if}}"
+            aria-label="View {{title}} case study"
+          >
+            <div class="card-image">
+              {{cardImageHtml}}
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category-badge">{{category}}</span>
+                <span class="tech-stack-inline">{{techStackInline}}</span>
+              </div>
+              <h3 class="card-title">{{title}}</h3>
+              <p class="card-desc">{{cardDesc}}</p>
+              <span class="case-study-link" aria-hidden="true">View Case Study →</span>
+            </div>
+          </a>
+{{/each}}

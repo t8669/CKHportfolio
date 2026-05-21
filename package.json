@@ -1,0 +1,12 @@
+{
+  "name": "ckh-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-projects.mjs",
+    "build:watch": "node --watch scripts/build-projects.mjs",
+    "serve": "python -m http.server 8080"
+  },
+  "dependencies": {
+    "marked": "^15.0.12"
+  }
+}

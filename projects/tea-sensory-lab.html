@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tea Sensory Lab -- Chan Kwok Hin</title>
+  <meta name="description" content="A phygital FYP installation guiding users through a gamified multisensory journey to discover their personalised Tea Spirit, bridging Hong Kong tea heritage with Gen Z culture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="project-detail">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <nav class="nav nav--project" role="navigation" aria-label="Main navigation">
+    <div class="nav-pill-group">
+      <a href="../index.html" class="nav-pill">About</a>
+      <a href="../index.html#work" class="nav-pill">My Work</a>
+    </div>
+    <p class="nav-project-title" aria-current="page">Tea Sensory Lab</p>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-page">
+
+      <div class="project-scroll-content">
+        <div class="container">
+
+          <a href="../index.html#work" class="back-btn" aria-label="Back to My Work">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+            </svg>
+            Back to Projects
+          </a>
+
+          <div class="project-hero">
+            <span class="category-badge">HARDWARE</span>
+            <h1>Tea Sensory Lab</h1>
+            <p class="project-tagline">Bridging Hong Kong's traditional tea heritage with Gen Z culture through custom hardware and a Godot-powered phygital experience.</p>
+          </div>
+
+          <div
+            class="hero-image-wrap"
+            onclick="openLightbox(0)"
+            role="button"
+            tabindex="0"
+            aria-label="View full size image"
+            onkeydown="if(event.key==='Enter')openLightbox(0)"
+          >
+            <img src="../assets/projects/tea-sensory-lab/hero.png" alt="Tea Sensory Lab hero" width="960" height="540" loading="lazy" />
+          </div>
+
+          <div class="process-images intro-gallery" aria-label="Project gallery">
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(1)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 1"
+                onkeydown="if(event.key==='Enter')openLightbox(1)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p2.png" alt="Tea Sensory Lab — installation photo 1" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(2)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 2"
+                onkeydown="if(event.key==='Enter')openLightbox(2)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p3.png" alt="Tea Sensory Lab — installation photo 2" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(3)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 3"
+                onkeydown="if(event.key==='Enter')openLightbox(3)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p4.png" alt="Tea Sensory Lab — installation photo 3" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(4)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 4"
+                onkeydown="if(event.key==='Enter')openLightbox(4)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p5.png" alt="Tea Sensory Lab — installation photo 4" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(5)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 5"
+                onkeydown="if(event.key==='Enter')openLightbox(5)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p6.png" alt="Tea Sensory Lab — installation photo 5" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(6)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 6"
+                onkeydown="if(event.key==='Enter')openLightbox(6)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p7.png" alt="Tea Sensory Lab — installation photo 6" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(7)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 7"
+                onkeydown="if(event.key==='Enter')openLightbox(7)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p8.png" alt="Tea Sensory Lab — installation photo 7" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(8)"
+                role="button"
+                tabindex="0"
+                aria-label="Tea Sensory Lab — installation photo 8"
+                onkeydown="if(event.key==='Enter')openLightbox(8)"
+              ><img src="../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p9.png" alt="Tea Sensory Lab — installation photo 8" loading="lazy" /></div>
+          </div>
+
+
+          <section class="case-section" aria-labelledby="label-problem">
+            <p class="section-label" id="label-problem">The Problem</p>
+            <div class="case-content">
+              <p>Tea suffers a compounding perception problem among younger generations in Hong Kong. Beyond being seen as old-fashioned, it loses ground to coffee on almost every dimension that matters to Gen Z: more varied flavour profiles, seamless fit into fast-paced urban lifestyles, and a vastly stronger presence online and on the street — walk through Hong Kong and coffee shops outnumber tea houses by a visible margin.</p>
+<p>Research confirms this shift: Gen Z now accounts for approximately <strong>71% of new tea-drinking experiences</strong>, but heavily favours customised, aesthetically shareable formats like bubble tea and matcha over traditional brews. Meanwhile, heritage tea shops are closing under rising rents and a lack of youth engagement.</p>
+<blockquote>
+<p>We saw this not as cultural decline, but as a design opportunity: the gap exists not because tea is inferior, but because no one has made it feel personal, modern, and worth sharing.</p>
+</blockquote>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="label-experience">
+            <p class="section-label" id="label-experience">The Experience</p>
+            <div class="case-content">
+              <p>Tea Sensory Lab guides each user through a <strong>four-zone journey</strong> to discover their 
+Tea Spirit — a personalised character archetype matched to a unique tea blend. 
+The experience takes approximately 5–8 minutes and requires no staff assistance.</p>
+<hr>
+<h2>Zone 1 — Discover Your Profile</h2>
+<p>A teacup sits on an illuminated tabletop. Slide it across glowing options to navigate 
+an 8-question personality quiz. <strong>Shake the cup to confirm</strong> each answer.</p>
+<p>The quiz maps your responses to one of <strong>9 Tea Spirit archetypes</strong>, each corresponding 
+to a unique blend of tea base, flower, and fruit.</p>
+<hr>
+<h2>Zone 2 — Collect Your Ingredients</h2>
+<p>The table reveals your personalised recipe. A breathing light pulses at each 
+ingredient station in sequence — lift the indicated bottle to collect it. Pick up 
+the wrong one, and the system halts until it is returned.</p>
+<p><strong>The ingredients you collect are real</strong> — the bottles contain the actual components 
+of your blend.</p>
+<hr>
+<h2>Zone 2.5 — Smell Your Blend</h2>
+<p>Stack your collected bottles on the Scent Platform. Squeeze the air bulb. A burst 
+of your blended aroma is pushed directly toward you — your first sensory encounter 
+with your tea, before it has ever been brewed.</p>
+<hr>
+<h2>Zone 3 — Summon Your Tea Spirit</h2>
+<p>Your Tea Spirit arrives on the tabletop as a volatile fog. Push the physical slider 
+across the table to scan and resolve it — the fog clears to reveal your character. 
+The wall display toggles between your tea&#39;s <strong>flavour science data</strong> and your 
+Spirit&#39;s <strong>personality lore</strong>.</p>
+<p><strong>High-five the character</strong> on the tabletop. The Spirit reacts, and a premium 
+postcard is dispensed — one side your Tea Master&#39;s Guide, the other your Spirit&#39;s 
+story. A QR code appears on screen to save and share your result.</p>
+<p>The system resets. The next user begins.</p>
+            </div>
+          </section>
+
+
+          <section class="case-section" aria-labelledby="label-process">
+            <p class="section-label" id="label-process">The Process</p>
+            <div class="case-content">
+              <h2>Research Foundation</h2>
+<p>Before any hardware was built, the project was grounded in <strong>three months of research</strong> spanning consumer psychology, multisensory flavour science, and local cultural history.</p>
+<ul>
+<li>Up to <strong>80% of perceived flavour</strong> comes from smell, not taste — directly informing the scent-mixing zone design</li>
+<li>Hong Kong has a largely forgotten tea cultivation history, from 17th-century Qing Dynasty plantations on Castle Peak to the collapsed Ngong Ping Tea Plantation on Lantau</li>
+<li>Two fieldwork visits to <strong>Kadoorie Farm and Botanic Garden (KFBG)</strong> with the Regenerative Agriculture Department and Hong Kong Tea Research Institute grounded the narrative in real industry context</li>
+</ul>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(9)"
+                role="button"
+                tabindex="0"
+                aria-label="Kadoorie Farm and Botanic Garden (KFBG) site visit"
+                onkeydown="if(event.key==='Enter')openLightbox(9)"
+              ><img src="../assets/projects/tea-sensory-lab/content/ResearchFoundation_1.png" alt="Kadoorie Farm and Botanic Garden (KFBG) site visit" loading="lazy" /></div>
+<hr>
+<h2>System Architecture</h2>
+<p>The installation runs across four zones inside a unified Lab cabinet, all communicating with a <strong>Godot state-machine controller</strong> via Serial protocol.</p>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Interaction</th>
+<th>Hardware</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Zone 1</strong> — Quiz</td>
+<td>Slide cup to navigate, shake to confirm</td>
+<td>ESP32-C3 + MPU6050 Smart Teacup, IR touch surface</td>
+</tr>
+<tr>
+<td><strong>Zone 2</strong> — Ingredients</td>
+<td>Lift correct ingredient bottles</td>
+<td>High-precision FSR array × 11 stations</td>
+</tr>
+<tr>
+<td><strong>Zone 2.5</strong> — Scent</td>
+<td>Squeeze air bulb to release aroma</td>
+<td>Sound-peak sensor + pneumatic scent tower</td>
+</tr>
+<tr>
+<td><strong>Zone 3</strong> — Ritual</td>
+<td>Scan spirit with slider, high-five to claim</td>
+<td>Linear potentiometer + capacitive touch sensor + 9-channel motorised dispenser</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Key Technical Decisions</h2>
+<h3>Game Engine — HTML vs Godot</h3>
+<p>Both were within my development experience — the choice came down to integration depth.</p>
+<ul>
+<li><strong>Serial communication</strong> with Arduino was native and stable in Godot; WebSerial in a browser added unpredictable overhead</li>
+<li><strong>Custom shaders</strong> for the fog dissolve and high-five particle effects required a dedicated rendering pipeline</li>
+<li><strong>State machine and asset management</strong> suited a system running continuously for hours without browser runtime interference</li>
+<li>Existing familiarity with Godot increased team velocity from day one</li>
+</ul>
+<h3>Table Fabrication — One-Piece Custom vs Acrylic Laser Cutting + 3D Printing</h3>
+<p>A 12-slot tabletop with precisely dimensioned sensor cutouts and cable routing had no off-the-shelf equivalent.</p>
+<ul>
+<li>One-piece custom fabrication carried <strong>prohibitive cost, transport overhead</strong>, and no tolerance for late-stage design changes</li>
+<li><strong>Laser-cut acrylic panels</strong> allowed cutout dimensions to be iterated without re-ordering an entire piece</li>
+<li><strong>3D-printed basin inserts</strong> handled precise sensor clearances and cable routing channels that flat-cut acrylic alone couldn&#39;t achieve</li>
+<li>The hybrid approach matched dimensional accuracy at a fraction of bespoke fabrication cost — critical on a student budget</li>
+</ul>
+<div class="case-content-images">
+<div class="case-content-img-wrap"
+                onclick="openLightbox(10)"
+                role="button"
+                tabindex="0"
+                aria-label="We were installing the 3D-printed basin"
+                onkeydown="if(event.key==='Enter')openLightbox(10)"
+              ><img src="../assets/projects/tea-sensory-lab/content/TableFabrication_1.png" alt="We were installing the 3D-printed basin" loading="lazy" /></div>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(11)"
+                role="button"
+                tabindex="0"
+                aria-label="We were installing the 3D-printed basin"
+                onkeydown="if(event.key==='Enter')openLightbox(11)"
+              ><img src="../assets/projects/tea-sensory-lab/content/TableFabrication_2.png" alt="We were installing the 3D-printed basin" loading="lazy" /></div>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(12)"
+                role="button"
+                tabindex="0"
+                aria-label="The whole Laser-cut acrylic panels"
+                onkeydown="if(event.key==='Enter')openLightbox(12)"
+              ><img src="../assets/projects/tea-sensory-lab/content/TableFabrication_3.png" alt="The whole Laser-cut acrylic panels" loading="lazy" /></div>
+</div>
+<h3>Answer Confirmation — IR Dwell Time vs Shake to Confirm</h3>
+<p>Early prototypes used 3-second IR hover to confirm answers, causing two problems: accidental confirmations when users hesitated, and a passive waiting experience that broke immersion.</p>
+<ul>
+<li><strong>Near-zero false trigger rate</strong> — a deliberate shake is unambiguous; dwell time is not</li>
+<li><strong>Tea science connection</strong> — shaking mixes saponins with air to stabilise foam texture, and releases volatile aromatic compounds responsible for floral and fruity fragrance, giving the gesture a meaning beyond UI mechanics</li>
+<li><strong>Labour Illusion (UX psychology)</strong> — active motion makes perceived wait time shorter and increases the user&#39;s sense of value in the result</li>
+<li>Appropriate for a <strong>low-frequency, entertainment-first</strong> installation where theatrical engagement outweighs speed</li>
+</ul>
+<h3>Material Detection — Film Pressure Sensor vs Photoresistor</h3>
+<p>Zone 2 needed reliable bottle-lift detection, but the ingredient bottles were intentionally light.</p>
+<ul>
+<li><strong>FSR sensors</strong> fell within the noise floor for these bottle weights — readings were inconsistent</li>
+<li>The transparent resin basins allowed <strong>ambient light to pass through</strong> when empty; bottle contents blocked it reliably when placed — a naturally stable photoresistor setup</li>
+<li>Simpler calibration and no mechanical wear from repeated loading across a full exhibition day</li>
+</ul>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(13)"
+                role="button"
+                tabindex="0"
+                aria-label="We were installing the Photoresistor"
+                onkeydown="if(event.key==='Enter')openLightbox(13)"
+              ><img src="../assets/projects/tea-sensory-lab/content/MaterialDetection_1.jpg" alt="We were installing the Photoresistor" loading="lazy" /></div>
+<h3>Scent Activation — Barometric Pressure vs Sound-Peak Sensor</h3>
+<p>Detecting a hand squeeze on an air bulb needed to be consistent across all users&#39; grip strengths.</p>
+<ul>
+<li><strong>BMP280 barometer</strong> was insufficiently sensitive to hand-squeeze pressure changes — readings varied too widely between users</li>
+<li>A <strong>sound-peak sensor</strong> detecting the acoustic rush of air from the nozzle produced a consistent, grip-independent trigger signal</li>
+<li>No physical contact between sensor and bulb mechanism — simpler assembly, no wear-related failure risk</li>
+</ul>
+<hr>
+<h2>Hardware Iteration</h2>
+<p>Every physical component was custom-engineered from scratch. No off-the-shelf product met the spatial, aesthetic, and Arduino integration requirements simultaneously.</p>
+<ul>
+<li><strong>Card dispenser</strong> — 9 full build iterations resolving structural instability, FDM overhangs, surface friction, servo misalignment, exit momentum loss, and card corner snagging before achieving consistent single-card ejection</li>
+<li><strong>Scent vessels</strong> — 8 iterations; switched from injection-moulded acrylic (<strong>700 RMB/unit</strong>) to transparent resin 3D printing (<strong>150 RMB/unit</strong>) with a threadless silicone O-ring seal</li>
+<li><strong>Cabinet exterior</strong> — unified disparate fabrication materials into a monolithic Lab aesthetic by wrapping all opaque surfaces in textured wallpaper, preserving only the transparent acrylic front edge as an intentional design detail</li>
+</ul>
+<div class="case-content-images">
+<div class="case-content-img-wrap"
+                onclick="openLightbox(14)"
+                role="button"
+                tabindex="0"
+                aria-label="Card dispenser"
+                onkeydown="if(event.key==='Enter')openLightbox(14)"
+              ><img src="../assets/projects/tea-sensory-lab/content/Carddispenser_1.png" alt="Card dispenser" loading="lazy" /></div>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(15)"
+                role="button"
+                tabindex="0"
+                aria-label="Scent Vessels"
+                onkeydown="if(event.key==='Enter')openLightbox(15)"
+              ><img src="../assets/projects/tea-sensory-lab/content/ScentVessels_1.png" alt="Scent Vessels" loading="lazy" /></div>
+</div>
+<hr>
+<h2>Visual &amp; Character Design</h2>
+<p>Nine Tea Spirit IP characters were designed under a <strong>modular species system</strong>, mapping each character&#39;s geometry and colour directly to its tea profile.</p>
+<table>
+<thead>
+<tr>
+<th>Species</th>
+<th>Silhouette Base</th>
+<th>Tea Types</th>
+<th>Design Language</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Floral</td>
+<td>Circle</td>
+<td>Jasmine, Osmanthus, Rose</td>
+<td>Soft, rounded, approachable</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>Rectangle</td>
+<td>Lemon, Peach, Asian Pear</td>
+<td>Relaxed, elongated, chill vibe</td>
+</tr>
+<tr>
+<td>Floral-Fruity</td>
+<td>Triangle</td>
+<td>Chamomile blends</td>
+<td>Balanced, expressive</td>
+</tr>
+</tbody></table>
+<div class="case-content-images">
+<div class="case-content-img-wrap"
+                onclick="openLightbox(16)"
+                role="button"
+                tabindex="0"
+                aria-label="Character Design 1"
+                onkeydown="if(event.key==='Enter')openLightbox(16)"
+              ><img src="../assets/projects/tea-sensory-lab/content/Character_1.png" alt="Character Design 1" loading="lazy" /></div>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(17)"
+                role="button"
+                tabindex="0"
+                aria-label="Character Design 2"
+                onkeydown="if(event.key==='Enter')openLightbox(17)"
+              ><img src="../assets/projects/tea-sensory-lab/content/Character_2.png" alt="Character Design 2" loading="lazy" /></div>
+</div>
+<p>Each character&#39;s <strong>primary colour</strong> was mapped to its tea liquor&#39;s reference from tasting literature — straw-to-jade for green tea, bright amber for oolong, copper-red to mahogany for black tea. Silhouettes evolved through three rounds of advisor feedback, from an overly complex slime-base direction to a simplified, instantly readable animal-like form with expressive eyes and a species-specific headpiece. The modular system allows future archetype expansion at low incremental design cost.</p>
+            </div>
+          </section>
+
+          <section class="case-section case-section--result" aria-labelledby="label-result">
+            <p class="section-label" id="label-result">The Result</p>
+            <div class="case-content">
+              <blockquote>
+<p>&quot;Distinguished by thorough background research and on-site fieldwork, strong hardware product design — including an independently developed card dispenser and scent-permeable storage vessels — and a cohesive visual and character identity throughout.&quot;</p>
+<p>— FYP Supervisor, Ms. Koala Yip, School of Creative Media, CityU</p>
+</blockquote>
+<p>Across the 12-week implementation phase, I was solely responsible for:</p>
+<ul>
+<li><strong>Awarded Grade A</strong></li>
+<li>Arduino and sensor architecture across all four zones</li>
+<li>Godot–hardware Serial integration and state-machine logic</li>
+<li>Card dispenser fabrication and iteration (9 builds)</li>
+<li>Scent vessel design and iteration (8 builds)</li>
+<li>Acrylic tabletop specification and assembly</li>
+<li>UI visual identity and projection layout</li>
+<li>All 9 Tea Spirit IP character designs</li>
+</ul>
+            </div>
+          </section>
+
+
+        </div>
+      </div>
+
+      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
+        <div class="meta-card-inner">
+
+          <div class="meta-col meta-col--primary">
+            <div class="meta-group">
+              <span class="meta-label">My Role</span>
+              <span class="meta-value">Hardware Developer & Visual Designer</span>
+            </div>
+            <div class="meta-group">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">Nov 2025 – Apr 2026</span>
+            </div>
+          </div>
+
+          <div class="meta-col meta-col--stack">
+            <div class="meta-group meta-group--stack">
+              <span class="meta-label">Tech Stack</span>
+              <ul class="tech-stack-list">
+                                <li>Godot</li>
+                <li>Arduino</li>
+                <li>ESP32</li>
+                <li>Serial Communication</li>
+                <li>Acrylic Fabrication</li>
+                <li>3D Printing</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="meta-col meta-col--actions">
+            <div class="meta-actions">
+            <a href="https://youtu.be/f3GsAInN7Uo?si=sIwsldpAMnLJ2uaj" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
+              <img src="../assets/icon/YT-icon-black.svg" alt="" width="20" height="20" loading="lazy" aria-hidden="true" />
+            </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="lightbox" class="lightbox-overlay" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div style="position:absolute;inset:0;" onclick="closeLightbox()" aria-hidden="true"></div>
+    <div class="lb-container">
+      <button class="lb-close" onclick="closeLightbox()" aria-label="Close image viewer">&#x2715;</button>
+      <button class="lb-prev" onclick="lbNavigate(-1)" aria-label="Previous image">&#8249;</button>
+      <img class="lb-image" id="lb-image" src="" alt="" />
+      <button class="lb-next" onclick="lbNavigate(1)" aria-label="Next image">&#8250;</button>
+      <p class="lb-counter" id="lb-counter" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script>
+    window.lbImages = [
+      {
+        "src": "../assets/projects/tea-sensory-lab/hero.png",
+        "alt": "Tea Sensory Lab hero"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p2.png",
+        "alt": "Tea Sensory Lab — installation photo 1"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p3.png",
+        "alt": "Tea Sensory Lab — installation photo 2"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p4.png",
+        "alt": "Tea Sensory Lab — installation photo 3"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p5.png",
+        "alt": "Tea Sensory Lab — installation photo 4"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p6.png",
+        "alt": "Tea Sensory Lab — installation photo 5"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p7.png",
+        "alt": "Tea Sensory Lab — installation photo 6"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p8.png",
+        "alt": "Tea Sensory Lab — installation photo 7"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/Tea%20Sensory%20Lab_p9.png",
+        "alt": "Tea Sensory Lab — installation photo 8"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/ResearchFoundation_1.png",
+        "alt": "Kadoorie Farm and Botanic Garden (KFBG) site visit"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/TableFabrication_1.png",
+        "alt": "We were installing the 3D-printed basin"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/TableFabrication_2.png",
+        "alt": "We were installing the 3D-printed basin"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/TableFabrication_3.png",
+        "alt": "The whole Laser-cut acrylic panels"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/MaterialDetection_1.jpg",
+        "alt": "We were installing the Photoresistor"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/Carddispenser_1.png",
+        "alt": "Card dispenser"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/ScentVessels_1.png",
+        "alt": "Scent Vessels"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/Character_1.png",
+        "alt": "Character Design 1"
+      },
+      {
+        "src": "../assets/projects/tea-sensory-lab/content/Character_2.png",
+        "alt": "Character Design 2"
+      }
+    ];
+  </script>
+  <script src="../js/project-lightbox.js" defer></script>
+</body>
+</html>

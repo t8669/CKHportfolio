@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROJECT TITLE -- Chan Kwok Hin</title>
+  <meta name="description" content="PROJECT SHORT DESCRIPTION" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="project-detail">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <nav class="nav nav--project" role="navigation" aria-label="Main navigation">
+    <div class="nav-pill-group">
+      <a href="../index.html" class="nav-pill">About</a>
+      <a href="../index.html#work" class="nav-pill">My Work</a>
+    </div>
+    <!-- 修改：與 <title> 一致的全名或展示用標題 -->
+    <p class="nav-project-title" aria-current="page">PROJECT TITLE</p>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-page">
+
+      <div class="project-scroll-content">
+        <div class="container">
+
+          <a href="../index.html#work" class="back-btn" aria-label="Back to My Work">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+            </svg>
+            Back to Projects
+          </a>
+
+          <div class="project-hero">
+            <!-- 修改：HARDWARE / APP / GAME / UI/UX / TEACHING -->
+            <span class="category-badge">CATEGORY</span>
+            <!-- 修改：作品標題 -->
+            <h1>Project Title Goes Here</h1>
+            <!-- 修改：一句話描述（20-30 字） -->
+            <p class="project-tagline">A short one-liner describing what this project is and why it matters.</p>
+          </div>
+
+          <!-- Hero 大圖
+               有圖片時：刪除 img-placeholder div，改為以下格式
+               <img src="../assets/projects/[folder]/hero.jpg" alt="..." width="960" height="540" loading="lazy" /> -->
+          <div
+            class="hero-image-wrap"
+            onclick="openLightbox(0)"
+            role="button"
+            tabindex="0"
+            aria-label="View full size image"
+            onkeydown="if(event.key==='Enter')openLightbox(0)"
+          >
+            <!-- 修改：替換 background 為作品專屬顏色 -->
+            <div class="img-placeholder" style="background:#1a1a2e;">HERO IMAGE PLACEHOLDER</div>
+          </div>
+
+          <section class="case-section" aria-labelledby="label-problem">
+            <p class="section-label" id="label-problem">The Problem</p>
+            <!-- 修改：2-3 句，描述你解決的問題 -->
+            <p>Describe the problem this project was created to solve. What was missing or needed? Who was affected?</p>
+          </section>
+
+          <!-- 選用：sections.experience + experience.md；無則整段不顯示 -->
+          <!--
+          <section class="case-section" aria-labelledby="label-experience">
+            <p class="section-label" id="label-experience">The Experience</p>
+            <div class="case-content">...</div>
+          </section>
+          -->
+
+          <section class="case-section" aria-labelledby="label-process">
+            <p class="section-label" id="label-process">The Process</p>
+            <!-- 修改：3-5 句，描述開發過程 -->
+            <p>Describe how you approached the problem. What technologies did you use? What were the key decisions?</p>
+
+            <!-- 過程圖片：有圖片時刪除 img-placeholder，改用 img 標籤 -->
+            <div class="process-images">
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(1)"
+                role="button"
+                tabindex="0"
+                aria-label="View process image 1"
+                onkeydown="if(event.key==='Enter')openLightbox(1)"
+              >
+                <div class="img-placeholder" style="background:#1a1a2e;">PROCESS IMAGE 1</div>
+              </div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(2)"
+                role="button"
+                tabindex="0"
+                aria-label="View process image 2"
+                onkeydown="if(event.key==='Enter')openLightbox(2)"
+              >
+                <div class="img-placeholder" style="background:#1a1a2e;">PROCESS IMAGE 2</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-section case-section--result" aria-labelledby="label-result">
+            <p class="section-label" id="label-result">The Result</p>
+            <blockquote>
+              <!-- 修改：成果描述，盡量用具體數字 -->
+              <p>Summarise the outcome with specific numbers. What impact did it have?</p>
+            </blockquote>
+          </section>
+
+          <!-- 選用：在 projects.json 設定 sections.reference 並撰寫 reference.md；無則整段不顯示 -->
+          <!--
+          <section class="case-section" aria-labelledby="label-reference">
+            <p class="section-label" id="label-reference">References</p>
+            <div class="case-content">...</div>
+          </section>
+          -->
+
+        </div>
+      </div>
+
+      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
+        <div class="meta-card-inner">
+
+          <!-- 第一欄：上 My Role、下 Timeline（直向 stack） -->
+          <div class="meta-col meta-col--primary">
+            <div class="meta-group">
+              <span class="meta-label">My Role</span>
+              <span class="meta-value">Role Goes Here</span>
+            </div>
+            <div class="meta-group">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">X Months</span>
+            </div>
+          </div>
+
+          <!-- 第二欄：Tech Stack -->
+          <div class="meta-col meta-col--stack">
+            <div class="meta-group meta-group--stack">
+              <span class="meta-label">Tech Stack</span>
+              <ul class="tech-stack-list">
+                <li>Technology 1</li>
+                <li>Technology 2</li>
+                <li>Technology 3</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 第三欄：由 data/projects.json 的 links 陣列在 build 時產生；無連結時整欄省略 -->
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="lightbox" class="lightbox-overlay" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div style="position:absolute;inset:0;" onclick="closeLightbox()" aria-hidden="true"></div>
+    <div class="lb-container">
+      <button class="lb-close" onclick="closeLightbox()" aria-label="Close image viewer">&#x2715;</button>
+      <button class="lb-prev" onclick="lbNavigate(-1)" aria-label="Previous image">&#8249;</button>
+      <img class="lb-image" id="lb-image" src="" alt="" />
+      <button class="lb-next" onclick="lbNavigate(1)" aria-label="Next image">&#8250;</button>
+      <p class="lb-counter" id="lb-counter" aria-live="polite"></p>
+    </div>
+  </div>
+
+  
+  <script>
+    window.lbImages = [
+      { src: null, alt: "Hero image" },
+      { src: null, alt: "Process image 1" },
+      { src: null, alt: "Process image 2" }
+    ];
+  </script>
+  <script src="../js/project-lightbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genery — AI Travel App -- Chan Kwok Hin</title>
+  <meta name="description" content="End-to-end UX design for an AI-powered travel planning app, from user research and persona development to high-fidelity Figma prototypes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="project-detail">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <nav class="nav nav--project" role="navigation" aria-label="Main navigation">
+    <div class="nav-pill-group">
+      <a href="../index.html" class="nav-pill">About</a>
+      <a href="../index.html#work" class="nav-pill">My Work</a>
+    </div>
+    <p class="nav-project-title" aria-current="page">Genery — AI Travel App</p>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-page">
+
+      <div class="project-scroll-content">
+        <div class="container">
+
+          <a href="../index.html#work" class="back-btn" aria-label="Back to My Work">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+            </svg>
+            Back to Projects
+          </a>
+
+          <div class="project-hero">
+            <span class="category-badge">UI/UX</span>
+            <h1>Genery — AI Travel App</h1>
+            <p class="project-tagline">End-to-end UX design for an AI-powered travel planning app, from user research and persona development to high-fidelity Figma prototypes.</p>
+          </div>
+
+          <div
+            class="hero-image-wrap"
+            onclick="openLightbox(0)"
+            role="button"
+            tabindex="0"
+            aria-label="View full size image"
+            onkeydown="if(event.key==='Enter')openLightbox(0)"
+          >
+            <img src="../assets/projects/genery-app/hero.jpg" alt="Genery — AI Travel App hero" width="960" height="540" loading="lazy" />
+          </div>
+
+
+          <section class="case-section" aria-labelledby="label-problem">
+            <p class="section-label" id="label-problem">The Problem</p>
+            <div class="case-content">
+              <p>Describe the problem this project was created to solve. qweqweqw </p>
+            </div>
+          </section>
+
+
+          <section class="case-section" aria-labelledby="label-process">
+            <p class="section-label" id="label-process">The Process</p>
+            <div class="case-content">
+              <p>Describe how you approached the problem and the key technical decisions.
+hello world!</p>
+<!-- ![Process image](../assets/projects/genery-app/process-1.jpg) -->
+            </div>
+          </section>
+
+          <section class="case-section case-section--result" aria-labelledby="label-result">
+            <p class="section-label" id="label-result">The Result</p>
+            <div class="case-content">
+              <p>Summarise the outcome with specific numbers or measurable impact.</p>
+            </div>
+          </section>
+
+
+        </div>
+      </div>
+
+      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
+        <div class="meta-card-inner">
+
+          <div class="meta-col meta-col--primary">
+            <div class="meta-group">
+              <span class="meta-label">My Role</span>
+              <span class="meta-value">UX Designer</span>
+            </div>
+            <div class="meta-group">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">TBD</span>
+            </div>
+          </div>
+
+          <div class="meta-col meta-col--stack">
+            <div class="meta-group meta-group--stack">
+              <span class="meta-label">Tech Stack</span>
+              <ul class="tech-stack-list">
+                                <li>Figma</li>
+                <li>User Research</li>
+                <li>Prototyping</li>
+              </ul>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="lightbox" class="lightbox-overlay" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div style="position:absolute;inset:0;" onclick="closeLightbox()" aria-hidden="true"></div>
+    <div class="lb-container">
+      <button class="lb-close" onclick="closeLightbox()" aria-label="Close image viewer">&#x2715;</button>
+      <button class="lb-prev" onclick="lbNavigate(-1)" aria-label="Previous image">&#8249;</button>
+      <img class="lb-image" id="lb-image" src="" alt="" />
+      <button class="lb-next" onclick="lbNavigate(1)" aria-label="Next image">&#8250;</button>
+      <p class="lb-counter" id="lb-counter" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script>
+    window.lbImages = [
+      {
+        "src": "../assets/projects/genery-app/hero.jpg",
+        "alt": "Genery — AI Travel App hero"
+      }
+    ];
+  </script>
+  <script src="../js/project-lightbox.js" defer></script>
+</body>
+</html>

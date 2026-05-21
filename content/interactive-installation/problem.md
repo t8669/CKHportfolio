@@ -1,0 +1,5 @@
+Tea suffers a compounding perception problem among younger generations in Hong Kong. Beyond being seen as old-fashioned, it loses ground to coffee on almost every dimension that matters to Gen Z: more varied flavour profiles, seamless fit into fast-paced urban lifestyles, and a vastly stronger presence online and on the street — walk through Hong Kong and coffee shops outnumber tea houses by a visible margin.
+
+Research confirms this shift: Gen Z now accounts for approximately **71% of new tea-drinking experiences**, but heavily favours customised, aesthetically shareable formats like bubble tea and matcha over traditional brews. Meanwhile, heritage tea shops are closing under rising rents and a lack of youth engagement.
+
+> We saw this not as cultural decline, but as a design opportunity: the gap exists not because tea is inferior, but because no one has made it feel personal, modern, and worth sharing.

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityLog -- Chan Kwok Hin</title>
+  <meta name="description" content="A location-based Android app for leaving and discovering micro-local stories tied to physical places, built with Firebase and Kotlin in a 3-week MVP sprint." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="project-detail">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <nav class="nav nav--project" role="navigation" aria-label="Main navigation">
+    <div class="nav-pill-group">
+      <a href="../index.html" class="nav-pill">About</a>
+      <a href="../index.html#work" class="nav-pill">My Work</a>
+    </div>
+    <p class="nav-project-title" aria-current="page">CityLog</p>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-page">
+
+      <div class="project-scroll-content">
+        <div class="container">
+
+          <a href="../index.html#work" class="back-btn" aria-label="Back to My Work">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+            </svg>
+            Back to Projects
+          </a>
+
+          <div class="project-hero">
+            <span class="category-badge">APP</span>
+            <h1>CityLog</h1>
+            <p class="project-tagline">Rediscovering the soul of the city — one hidden log at a time.</p>
+          </div>
+
+          <div
+            class="hero-image-wrap"
+            onclick="openLightbox(0)"
+            role="button"
+            tabindex="0"
+            aria-label="View full size image"
+            onkeydown="if(event.key==='Enter')openLightbox(0)"
+          >
+            <img src="../assets/projects/firebase-app/introGallery/CityLog_1.png" alt="citylog hero" width="960" height="540" loading="lazy" />
+          </div>
+
+          <div class="process-images intro-gallery" aria-label="Project gallery">
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(1)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(1)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_2.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(2)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(2)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_3.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(3)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(3)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_4.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(4)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(4)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_5.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(5)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(5)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_6.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(6)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(6)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_7.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(7)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(7)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_8.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(8)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(8)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_9.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(9)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(9)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_10.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(10)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(10)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_11.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(11)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(11)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_12.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(12)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(12)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_13.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(13)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(13)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_14.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(14)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(14)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_15.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(15)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(15)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_16.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(16)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(16)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_17.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(17)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(17)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_18.png" alt="citylog" loading="lazy" /></div>
+              <div
+                class="process-img-wrap"
+                onclick="openLightbox(18)"
+                role="button"
+                tabindex="0"
+                aria-label="citylog"
+                onkeydown="if(event.key==='Enter')openLightbox(18)"
+              ><img src="../assets/projects/firebase-app/introGallery/CityLog_19.png" alt="citylog" loading="lazy" /></div>
+          </div>
+
+
+          <section class="case-section" aria-labelledby="label-problem">
+            <p class="section-label" id="label-problem">The Problem</p>
+            <div class="case-content">
+              <p>Social media platforms like Instagram and Xiaohongshu are optimised for polished, 
+broadcast-style content tied to landmarks and major attractions. They are not built 
+for the kind of observation that makes city walking genuinely interesting — the quiet 
+detail on a side street, the atmosphere of a specific corner at a specific time, the 
+small discovery that is too subtle to post but too meaningful to forget.</p>
+<p>Existing map-based review apps like Google Maps or OpenRice surface ratings and 
+information, but strip away the human moment of noticing. They answer <em>what is here</em>, 
+not <em>what someone felt here</em>.</p>
+<blockquote>
+<p>The gap is not a lack of content — it is a lack of a format that treats place-bound, 
+ephemeral observations as worth preserving. CityLog was built to fill that gap.</p>
+</blockquote>
+<p>We also identified a secondary problem: solo city exploration can feel isolating. 
+There is no existing tool that creates a sense of social presence through a 
+physical space — the feeling that others have walked here and left something behind 
+for you to find.</p>
+            </div>
+          </section>
+
+
+          <section class="case-section" aria-labelledby="label-process">
+            <p class="section-label" id="label-process">The Process</p>
+            <div class="case-content">
+              <h2>Concept &amp; Differentiation</h2>
+<p>CityLog is not a review app, a city guide, or a conventional social feed. The core 
+distinction is <strong>place-bound discovery tied to physical movement</strong>: content is anchored 
+to GPS coordinates, hidden until a user is physically nearby, and ranked by a 
+combination of distance, freshness, and community reaction — not follower count or 
+algorithmic promotion.</p>
+<p>The MVP was scoped to deliver this core loop end-to-end within a <strong>3-week development 
+cycle</strong>, using AI-assisted tooling to accelerate boilerplate generation while 
+independently designing and implementing the backend architecture, data model, and 
+system logic.</p>
+<hr>
+<h2>System Architecture</h2>
+<p>The app follows a strict <strong>MVVM pattern</strong> (Repository-ViewModel-Activity) with a 
+complete Firebase backend, structured across three layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Frontend</strong></td>
+<td>Android / Kotlin — 8 Activities, 3 Fragments, 8 ViewModels</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Firestore, Firebase Storage, Cloud Functions (Node.js)</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Repository pattern — no direct Firestore access from Views or Activities</td>
+</tr>
+</tbody></table>
+<p>The Repository layer handles all data operations, enforced by Firestore Security Rules 
+that prevent any client-side write to sensitive aggregate fields (<code>upvoteCount</code>, 
+<code>downvoteCount</code>, <code>commentCount</code>).</p>
+<hr>
+<h2>Key Technical Decisions</h2>
+<h3>Location Querying — Lat/Lng Range Filter vs Geohash</h3>
+<p>A naive proximity query using two-dimensional latitude/longitude range filters 
+(<code>WHERE lat BETWEEN x AND y AND lng BETWEEN a AND b</code>) cannot be expressed in 
+Firestore, which only supports single-field range queries per request.</p>
+<ul>
+<li><strong>Geohash encoding</strong> converts a 2D coordinate into a 1D string where 
+lexicographic proximity maps to geographic proximity — a 100-metre radius 
+query becomes a set of string prefix ranges on a single indexed field</li>
+<li>Implemented using <strong>GeoFireUtils</strong> to compute query bounds, then applying 
+Haversine distance filtering client-side to cull false positives at the edges 
+of each geohash cell</li>
+<li>This approach supports Firestore&#39;s index model natively, without requiring a 
+dedicated geospatial service</li>
+</ul>
+<h3>Vote Aggregates — Client Increment vs Cloud Function Recount</h3>
+<p>Maintaining accurate <code>upvoteCount</code> and <code>downvoteCount</code> on each log document 
+introduced a classic <strong>race condition</strong>: if two users vote simultaneously and both 
+read the same count before writing, one increment is lost.</p>
+<ul>
+<li>The initial approach used <code>FieldValue.increment()</code> directly from the client — 
+fast, but vulnerable to concurrent writes overwriting each other</li>
+<li>Final implementation uses an <strong>event-driven Cloud Function</strong> (<code>onVoteWrite</code>) 
+that triggers on any write to <code>logs/{logId}/votes/{userId}</code>, performs a full 
+recount from the votes subcollection, and writes authoritative totals back to 
+the parent document</li>
+<li>This is <strong>idempotent by design</strong> — even with Firebase&#39;s at-least-once delivery 
+guarantee, re-running the function on the same vote document produces the correct 
+result</li>
+<li>The UI applies <strong>optimistic updates</strong> via ViewModel LiveData for instant feedback, 
+with Firestore&#39;s <code>snapshotListener</code> reconciling the true value once the 
+Cloud Function completes</li>
+</ul>
+<h3>Area Labelling — Manual Input vs Automated Reverse Geocoding</h3>
+<p>Requiring users to manually label the area of each log would create friction and 
+inconsistent naming. Instead, an <code>onLogCreated</code> Cloud Function automatically resolves 
+a human-readable area label on every new log.</p>
+<ul>
+<li>Calls the <strong>Google Maps Reverse Geocoding API</strong> with the log&#39;s lat/lng coordinates</li>
+<li>A priority-type parser walks through the response&#39;s <code>addressComponents</code>, resolving 
+to the most specific meaningful label (street name → neighbourhood → district), 
+skipping useless values like standalone street numbers</li>
+<li>The UI displays a loading placeholder immediately on log creation; the Firestore 
+<code>snapshotListener</code> updates the label once the function completes — no polling required</li>
+</ul>
+<h3>Background Geofencing — Notification Trigger Design</h3>
+<p>The app registers the <strong>top 20 highest-upvoted logs</strong> in the user&#39;s city as invisible 
+500-metre geofences using Android&#39;s <code>GeofencingClient</code> from Google Play Services.</p>
+<ul>
+<li>Requires both <code>FOREGROUND_LOCATION</code> and <code>ACCESS_BACKGROUND_LOCATION</code> permissions 
+to function reliably when the app is not in the foreground</li>
+<li>A <code>PendingIntent</code> fires to <code>CityHotGeofenceReceiver</code> on <code>GEOFENCE_TRANSITION_ENTER</code> 
+events</li>
+<li>An <strong><code>AppSessionFlags</code> throttle</strong> (10-minute cooldown) prevents repeated API calls 
+within the same session, avoiding Google Play Services rate limits and unnecessary 
+battery drain</li>
+</ul>
+<h3>Security Model — Anonymous Auth for MVP Scope</h3>
+<p>The current implementation uses <strong>Firebase Anonymous Authentication</strong> exclusively — 
+a deliberate MVP scoping decision, not a permanent design choice. Anonymous auth 
+eliminates onboarding friction entirely while still providing a stable UID per device 
+for Firestore Security Rules enforcement.</p>
+<ul>
+<li>Users can set a display name, handle, and generated colour avatar, stored locally 
+and linked to their anonymous UID — creating a personal identity without requiring 
+an account</li>
+<li>Firestore Rules use <code>request.auth.uid</code> to enforce per-user vote uniqueness and 
+prevent unauthorised writes</li>
+<li>Google Sign-In, Apple Sign-In, and email authentication are scoped for the next 
+development phase when resources allow</li>
+</ul>
+<hr>
+<h2>Project Structure at Completion</h2>
+<ul>
+<li><strong>8 Activities</strong>, 3 Fragments, 8 ViewModels, 5 Repositories</li>
+<li><strong>5 Cloud Functions</strong>: <code>onVoteWrite</code> (vote recount), <code>onCommentWrite</code> 
+(comment count + owner notification), <code>onLogCreated</code> (reverse geocoding), 
+<code>getDailyTopLogs</code> (ranking build), FCM token management</li>
+<li>Firebase services used: <strong>Firestore, Storage, Cloud Functions, Cloud Messaging, 
+Anonymous Auth</strong></li>
+</ul>
+            </div>
+          </section>
+
+          <section class="case-section case-section--result" aria-labelledby="label-result">
+            <p class="section-label" id="label-result">The Result</p>
+            <div class="case-content">
+              <blockquote>
+<p>&quot;The concept creates clear differentiation in a crowded social media market. &quot;
+&quot;You are the top group in the class that applied the most techniques in your app — 
+almost full marks were achieved.&quot;</p>
+<p>— Jacky Cheung, Lecturer, SM3607</p>
+</blockquote>
+<p>Delivered as a <strong>fully functional Android MVP in 3 weeks</strong>, covering the complete 
+user journey from anonymous onboarding through log creation, proximity-based 
+discovery, social interaction, and physical postcard-style output via geofence 
+notifications.</p>
+<p>Key outcomes at submission:</p>
+<ul>
+<li>Ranked <strong>#1 in class</strong> for technical breadth across all project groups</li>
+<li>End-to-end location-aware architecture: geohash querying, 100-metre unlock radius, 
+and 500-metre geofence notification zones — all functional</li>
+<li>5 Cloud Functions handling vote aggregation, comment counts, reverse geocoding, 
+daily ranking, and push notification delivery</li>
+<li>Full MVVM architecture across 8 Activities and 5 Repositories, with zero direct 
+Firestore access from the UI layer</li>
+<li>Firestore Security Rules enforcing per-user vote uniqueness and protecting all 
+server-side aggregate fields from client manipulation</li>
+</ul>
+            </div>
+          </section>
+
+
+        </div>
+      </div>
+
+      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
+        <div class="meta-card-inner">
+
+          <div class="meta-col meta-col--primary">
+            <div class="meta-group">
+              <span class="meta-label">My Role</span>
+              <span class="meta-value">Backend Developer & System Architect</span>
+            </div>
+            <div class="meta-group">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">3 Weeks · 2026</span>
+            </div>
+          </div>
+
+          <div class="meta-col meta-col--stack">
+            <div class="meta-group meta-group--stack">
+              <span class="meta-label">Tech Stack</span>
+              <ul class="tech-stack-list">
+                                <li>Android Studio</li>
+                <li>MVVM</li>
+                <li>Firestore</li>
+                <li>Cloud Functions</li>
+                <li>Google Maps API</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="meta-col meta-col--actions">
+            <div class="meta-actions">
+            <a href="https://youtu.be/Rb0OQG5FwoI" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube">
+              <img src="../assets/icon/YT-icon-black.svg" alt="" width="20" height="20" loading="lazy" aria-hidden="true" />
+            </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="lightbox" class="lightbox-overlay" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div style="position:absolute;inset:0;" onclick="closeLightbox()" aria-hidden="true"></div>
+    <div class="lb-container">
+      <button class="lb-close" onclick="closeLightbox()" aria-label="Close image viewer">&#x2715;</button>
+      <button class="lb-prev" onclick="lbNavigate(-1)" aria-label="Previous image">&#8249;</button>
+      <img class="lb-image" id="lb-image" src="" alt="" />
+      <button class="lb-next" onclick="lbNavigate(1)" aria-label="Next image">&#8250;</button>
+      <p class="lb-counter" id="lb-counter" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script>
+    window.lbImages = [
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_1.png",
+        "alt": "citylog hero"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_2.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_3.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_4.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_5.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_6.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_7.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_8.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_9.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_10.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_11.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_12.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_13.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_14.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_15.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_16.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_17.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_18.png",
+        "alt": "citylog"
+      },
+      {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_19.png",
+        "alt": "citylog"
+      }
+    ];
+  </script>
+  <script src="../js/project-lightbox.js" defer></script>
+</body>
+</html>

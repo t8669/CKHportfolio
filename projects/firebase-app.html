@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full-Stack Mobile App -- Chan Kwok Hin</title>
+  <meta name="description" content="An Android application with real-time database, user authentication, and cloud storage powered by Firebase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="project-detail">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <nav class="nav nav--project" role="navigation" aria-label="Main navigation">
+    <div class="nav-pill-group">
+      <a href="../index.html" class="nav-pill">About</a>
+      <a href="../index.html#work" class="nav-pill">My Work</a>
+    </div>
+    <p class="nav-project-title" aria-current="page">Full-Stack Mobile App</p>
+  </nav>
+
+  <main id="main-content">
+    <div class="project-page">
+
+      <div class="project-scroll-content">
+        <div class="container">
+
+          <a href="../index.html#work" class="back-btn" aria-label="Back to My Work">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+            </svg>
+            Back to Projects
+          </a>
+
+          <div class="project-hero">
+            <span class="category-badge">APP</span>
+            <h1>Full-Stack Mobile App</h1>
+            <p class="project-tagline">An Android application with real-time database, user authentication, and cloud storage, built end-to-end using Firebase as the backend infrastructure.</p>
+          </div>
+
+          <div
+            class="hero-image-wrap"
+            onclick="openLightbox(0)"
+            role="button"
+            tabindex="0"
+            aria-label="View full size image"
+            onkeydown="if(event.key==='Enter')openLightbox(0)"
+          >
+            <img src="../assets/projects/firebase-app/hero.jpg" alt="Full-Stack Mobile App hero" width="960" height="540" loading="lazy" />
+          </div>
+
+
+          <section class="case-section" aria-labelledby="label-problem">
+            <p class="section-label" id="label-problem">The Problem</p>
+            <div class="case-content">
+              <p>The target user group needed a mobile-first platform to organise and share personal media collections, but existing solutions were either too complex or lacked real-time sync functionality.</p>
+            </div>
+          </section>
+
+          <section class="case-section" aria-labelledby="label-process">
+            <p class="section-label" id="label-process">The Process</p>
+            <div class="case-content">
+              <p>Built using Android Studio with Java. Implemented Firebase Authentication for secure login, Firestore for real-time data sync, and Firebase Storage for media uploads.</p>
+<h2>Database design</h2>
+<p>Designed the database schema to support nested collections and user-specific access rules.</p>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(1)"
+                role="button"
+                tabindex="0"
+                aria-label="Firestore schema sketch"
+                onkeydown="if(event.key==='Enter')openLightbox(1)"
+              ><img src="../assets/projects/firebase-app/process-1.jpg" alt="Firestore schema sketch" loading="lazy" /></div>
+<h2>User testing</h2>
+<p>Conducted three rounds of user testing with 8 participants.</p>
+<div class="case-content-img-wrap"
+                onclick="openLightbox(2)"
+                role="button"
+                tabindex="0"
+                aria-label="Testing session notes"
+                onkeydown="if(event.key==='Enter')openLightbox(2)"
+              ><img src="../assets/projects/firebase-app/process-2.jpg" alt="Testing session notes" loading="lazy" /></div>
+            </div>
+          </section>
+
+          <section class="case-section case-section--result" aria-labelledby="label-result">
+            <p class="section-label" id="label-result">The Result</p>
+            <div class="case-content">
+              <p>The app successfully handled 500+ media uploads in testing with zero data loss. User satisfaction score averaged 4.2 / 5.0 across all test participants. The Firebase architecture reduced backend development time by an estimated 60% compared to a custom server approach.</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
+        <div class="meta-card-inner">
+
+          <div class="meta-col meta-col--primary">
+            <div class="meta-group">
+              <span class="meta-label">My Role</span>
+              <span class="meta-value">Full-Stack Developer</span>
+            </div>
+            <div class="meta-group">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">4 Months</span>
+            </div>
+          </div>
+
+          <div class="meta-col meta-col--stack">
+            <div class="meta-group meta-group--stack">
+              <span class="meta-label">Tech Stack</span>
+              <ul class="tech-stack-list">
+                                <li>Android Studio</li>
+                <li>Java</li>
+                <li>Firebase Auth</li>
+                <li>Firestore</li>
+                <li>Firebase Storage</li>
+              </ul>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="lightbox" class="lightbox-overlay" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div style="position:absolute;inset:0;" onclick="closeLightbox()" aria-hidden="true"></div>
+    <div class="lb-container">
+      <button class="lb-close" onclick="closeLightbox()" aria-label="Close image viewer">&#x2715;</button>
+      <button class="lb-prev" onclick="lbNavigate(-1)" aria-label="Previous image">&#8249;</button>
+      <img class="lb-image" id="lb-image" src="" alt="" />
+      <button class="lb-next" onclick="lbNavigate(1)" aria-label="Next image">&#8250;</button>
+      <p class="lb-counter" id="lb-counter" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script>
+    window.lbImages = [
+      {
+        "src": "../assets/projects/firebase-app/hero.jpg",
+        "alt": "Full-Stack Mobile App hero"
+      },
+      {
+        "src": "../assets/projects/firebase-app/process-1.jpg",
+        "alt": "Firestore schema sketch"
+      },
+      {
+        "src": "../assets/projects/firebase-app/process-2.jpg",
+        "alt": "Testing session notes"
+      }
+    ];
+  </script>
+  <script src="../js/project-lightbox.js" defer></script>
+</body>
+</html>

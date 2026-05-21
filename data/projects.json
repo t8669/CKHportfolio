@@ -1,0 +1,464 @@
+{
+  "projects": [
+    {
+      "id": "tea-sensory-lab",
+      "slug": "tea-sensory-lab",
+      "featured": true,
+      "draft": false,
+      "category": "HARDWARE",
+      "title": "Tea Sensory Lab",
+      "metaDescription": "A phygital FYP installation guiding users through a gamified multisensory journey to discover their personalised Tea Spirit, bridging Hong Kong tea heritage with Gen Z culture.",
+      "cardDesc": "A phygital FYP installation that guides users through a gamified multisensory journey to discover their personalised Tea Spirit.",
+      "techStackInline": "Godot • Arduino • ESP32 • 3D Printing",
+      "tagline": "Bridging Hong Kong's traditional tea heritage with Gen Z culture through custom hardware and a Godot-powered phygital experience.",
+      "cardImage": {
+        "src": "assets/projects/tea-sensory-lab/card.png",
+        "placeholderBg": "#1a1a2e",
+        "alt": "Tea Sensory Lab"
+      },
+      "hero": {
+        "src": "../assets/projects/tea-sensory-lab/hero.png",
+        "placeholderBg": "#1a1a2e",
+        "alt": "Tea Sensory Lab hero"
+      },
+      "introGallery": [
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p2.png",
+          "alt": "Tea Sensory Lab — installation photo 1"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p3.png",
+          "alt": "Tea Sensory Lab — installation photo 2"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p4.png",
+          "alt": "Tea Sensory Lab — installation photo 3"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p5.png",
+          "alt": "Tea Sensory Lab — installation photo 4"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p6.png",
+          "alt": "Tea Sensory Lab — installation photo 5"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p7.png",
+          "alt": "Tea Sensory Lab — installation photo 6"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p8.png",
+          "alt": "Tea Sensory Lab — installation photo 7"
+        },
+        {
+          "src": "../assets/projects/tea-sensory-lab/Tea Sensory Lab_p9.png",
+          "alt": "Tea Sensory Lab — installation photo 8"
+        }
+      ],
+      "sections": {
+        "problem": "content/interactive-installation/problem.md",
+        "experience": "content/interactive-installation/experience.md",
+        "process": "content/interactive-installation/process.md",
+        "result": "content/interactive-installation/result.md"
+      },
+      "meta": {
+        "role": "Hardware Developer & Visual Designer",
+        "timeline": "Nov 2025 – Apr 2026",
+        "techStack": [
+          "Godot",
+          "Arduino",
+          "ESP32",
+          "Serial Communication",
+          "Acrylic Fabrication",
+          "3D Printing"
+        ]
+      },
+      "links": [
+        {
+          "url": "https://youtu.be/f3GsAInN7Uo?si=sIwsldpAMnLJ2uaj",
+          "label": "Watch on YouTube",
+          "icon": "youtube"
+        }
+      ]
+    },
+    {
+      "id": "citylog",
+      "slug": "citylog",
+      "featured": false,
+      "draft": false,
+      "category": "APP",
+      "title": "CityLog",
+      "metaDescription": "A location-based Android app for leaving and discovering micro-local stories tied to physical places, built with Firebase and Kotlin in a 3-week MVP sprint.",
+      "cardDesc": "An Android app for leaving and discovering place-bound micro-stories — unlocked only when you're physically nearby.",
+      "techStackInline": "Android • Full-Stack • Firebase • Cloud Functions",
+      "tagline": "Rediscovering the soul of the city — one hidden log at a time.",
+      "cardImage": {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_1.png",
+        "placeholderBg": "#e4eaf2",
+        "alt": "citylog"
+      },
+      "hero": {
+        "src": "../assets/projects/firebase-app/introGallery/CityLog_1.png",
+        "placeholderBg": "#0f1e2e",
+        "alt": "citylog hero"
+      },
+      "introGallery": [
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_2.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_3.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_4.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_5.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_6.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_7.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_8.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_9.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_10.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_11.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_12.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_13.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_14.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_15.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_16.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_17.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_18.png",
+          "alt": "citylog"
+        },
+        {
+          "src": "../assets/projects/firebase-app/introGallery/CityLog_19.png",
+          "alt": "citylog"
+        }
+      ],
+      "sections": {
+        "problem": "content/firebase-app/problem.md",
+        "process": "content/firebase-app/process.md",
+        "result": "content/firebase-app/result.md"
+      },
+      "meta": {
+        "role": "Backend Developer & System Architect",
+        "timeline": "3 Weeks · 2026",
+        "techStack": [
+          "Android Studio",
+          "MVVM",
+          "Firestore",
+          "Cloud Functions",
+          "Google Maps API"
+        ]
+      },
+      "links": [
+        {
+          "url": "https://youtu.be/Rb0OQG5FwoI",
+          "label": "Watch on YouTube",
+          "icon": "youtube"
+        }
+      ]
+    },
+    {
+      "id": "card-dispenser",
+      "slug": "card-dispenser",
+      "featured": false,
+      "draft": true,
+      "category": "HARDWARE",
+      "title": "Card Dispenser Machine",
+      "metaDescription": "A mechanical card-dispensing device designed in FreeCAD and realised through iterative 3D printing, from concept to functional prototype.",
+      "cardDesc": "A mechanical card-dispensing device designed in FreeCAD and realised through iterative 3D printing, from concept to functional prototype.",
+      "techStackInline": "FreeCAD • 3D Printing • Arduino",
+      "tagline": "A mechanical card-dispensing device designed in FreeCAD and realised through iterative 3D printing, from concept to functional prototype.",
+      "cardImage": {
+        "src": "assets/projects/card-dispenser/card.jpg",
+        "placeholderBg": "#f2eee6",
+        "alt": "Card Dispenser Machine"
+      },
+      "hero": {
+        "src": "../assets/projects/card-dispenser/hero.jpg",
+        "placeholderBg": "#f2eee6",
+        "alt": "Card Dispenser Machine hero"
+      },
+      "sections": {
+        "problem": "content/card-dispenser/problem.md",
+        "process": "content/card-dispenser/process.md",
+        "result": "content/card-dispenser/result.md"
+      },
+      "meta": {
+        "role": "Designer & Developer",
+        "timeline": "TBD",
+        "techStack": [
+          "FreeCAD",
+          "3D Printing",
+          "Arduino"
+        ]
+      },
+      "links": []
+    },
+    {
+      "id": "frozen-shoulder-coach",
+      "slug": "frozen-shoulder-coach",
+      "featured": false,
+      "draft": false,
+      "category": "APP",
+      "title": "Frozen Shoulder Home Coach",
+      "metaDescription": "A solo-built Android rehabilitation app that uses phone motion sensors to guide frozen shoulder exercises in real time — no wearables required.",
+      "cardDesc": "An Android app that turns your phone into a real-time rehabilitation coach for frozen shoulder — guiding exercises, counting reps, and tracking daily progress.",
+      "techStackInline": "Android • Java • Accelerometer • Sensor Fusion",
+      "tagline": "Bring your physio session home — no equipment, no guesswork, just your phone.",
+      "cardImage": {
+        "src": "assets/projects/frontend-app/FrozenShoulderHomeCoach_1.png",
+        "placeholderBg": "#e6f2ee",
+        "alt": "Frontend Mobile App"
+      },
+      "hero": {
+        "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_1.png",
+        "placeholderBg": "#e6f2ee",
+        "alt": "Mobile App hero"
+      },
+      "introGallery": [
+        {
+          "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_2.png",
+          "alt": "frozen-shoulder-coach"
+        },
+        {
+          "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_3.png",
+          "alt": "frozen-shoulder-coach"
+        },
+        {
+          "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_4.png",
+          "alt": "frozen-shoulder-coach"
+        },
+        {
+          "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_5.png",
+          "alt": "frozen-shoulder-coach"
+        },
+        {
+          "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_6.png",
+          "alt": "frozen-shoulder-coach"
+        },
+        {
+          "src": "../assets/projects/frontend-app/FrozenShoulderHomeCoach_7.png",
+          "alt": "frozen-shoulder-coach"
+        }
+      ],
+      "sections": {
+        "problem": "content/frontend-app/problem.md",
+        "process": "content/frontend-app/process.md",
+        "result": "content/frontend-app/result.md",
+        "reference": "content/frontend-app/reference.md"
+      },
+      "meta": {
+        "role": "Solo Developer",
+        "timeline": "2 Weeks · 2026",
+        "techStack": [
+          "Android Studio",
+          "Sensor Fusion",
+          "Java"
+        ]
+      },
+      "links": [
+        {
+          "url": "https://youtu.be/8_Xc7OtWHx0?si=r4sXQNnhOzuGaDf7",
+          "label": "Watch on YouTube",
+          "icon": "youtube"
+        },
+        {
+          "url": "https://github.com/t8669/Frozen-Shoulder-Home-Coach_project",
+          "label": "github",
+          "icon": "github"
+        }
+      ]
+    },
+    {
+      "id": "genery-app",
+      "slug": "genery-app",
+      "featured": false,
+      "draft": true,
+      "category": "UI/UX",
+      "title": "Genery — AI Travel App",
+      "metaDescription": "End-to-end UX design for an AI-powered travel planning app, from user research and persona development to high-fidelity Figma prototypes.",
+      "cardDesc": "End-to-end UX design for an AI-powered travel planning app, from user research and persona development to high-fidelity Figma prototypes.",
+      "techStackInline": "Figma • User Research • Prototyping",
+      "tagline": "End-to-end UX design for an AI-powered travel planning app, from user research and persona development to high-fidelity Figma prototypes.",
+      "cardImage": {
+        "src": "assets/projects/genery-app/card.jpg",
+        "placeholderBg": "#ece8f4",
+        "alt": "Genery — AI Travel App"
+      },
+      "hero": {
+        "src": "../assets/projects/genery-app/hero.jpg",
+        "placeholderBg": "#ece8f4",
+        "alt": "Genery — AI Travel App hero"
+      },
+      "sections": {
+        "problem": "content/genery-app/problem.md",
+        "process": "content/genery-app/process.md",
+        "result": "content/genery-app/result.md"
+      },
+      "meta": {
+        "role": "UX Designer",
+        "timeline": "TBD",
+        "techStack": [
+          "Figma",
+          "User Research",
+          "Prototyping"
+        ]
+      },
+      "links": []
+    },
+    {
+      "id": "godot-game",
+      "slug": "godot-game",
+      "featured": false,
+      "draft": true,
+      "category": "GAME",
+      "title": "Standalone Game — Godot",
+      "metaDescription": "A complete 2D game built solo in Godot Engine, featuring custom physics, state machines, and original game mechanics developed from scratch.",
+      "cardDesc": "A complete 2D game built solo in Godot Engine, featuring custom physics, state machines, and original game mechanics developed from scratch.",
+      "techStackInline": "Godot • GDScript • 2D Physics",
+      "tagline": "A complete 2D game built solo in Godot Engine, featuring custom physics, state machines, and original game mechanics developed from scratch.",
+      "cardImage": {
+        "src": "assets/projects/godot-game/card.jpg",
+        "placeholderBg": "#f2e6e6",
+        "alt": "Standalone Game — Godot"
+      },
+      "hero": {
+        "src": "../assets/projects/godot-game/hero.jpg",
+        "placeholderBg": "#f2e6e6",
+        "alt": "Standalone Game — Godot hero"
+      },
+      "sections": {
+        "problem": "content/godot-game/problem.md",
+        "process": "content/godot-game/process.md",
+        "result": "content/godot-game/result.md"
+      },
+      "meta": {
+        "role": "Game Developer",
+        "timeline": "TBD",
+        "techStack": [
+          "Godot",
+          "GDScript",
+          "2D Physics"
+        ]
+      },
+      "links": []
+    },
+    {
+      "id": "arduino-project",
+      "slug": "arduino-project",
+      "featured": false,
+      "draft": true,
+      "category": "HARDWARE",
+      "title": "Arduino Standalone Project",
+      "metaDescription": "An independent hardware project exploring sensor integration, real-time data processing, and physical computing using Arduino.",
+      "cardDesc": "An independent hardware project exploring sensor integration, real-time data processing, and physical computing using Arduino.",
+      "techStackInline": "Arduino • C++ • Sensors",
+      "tagline": "An independent hardware project exploring sensor integration, real-time data processing, and physical computing using Arduino.",
+      "cardImage": {
+        "src": "assets/projects/arduino-project/card.jpg",
+        "placeholderBg": "#e6f0ee",
+        "alt": "Arduino Standalone Project"
+      },
+      "hero": {
+        "src": "../assets/projects/arduino-project/hero.jpg",
+        "placeholderBg": "#e6f0ee",
+        "alt": "Arduino Standalone Project hero"
+      },
+      "sections": {
+        "problem": "content/arduino-project/problem.md",
+        "process": "content/arduino-project/process.md",
+        "result": "content/arduino-project/result.md"
+      },
+      "meta": {
+        "role": "Hardware Developer",
+        "timeline": "TBD",
+        "techStack": [
+          "Arduino",
+          "C++",
+          "Sensors"
+        ]
+      },
+      "links": []
+    },
+    {
+      "id": "stem-teaching",
+      "slug": "stem-teaching",
+      "featured": false,
+      "draft": true,
+      "category": "TEACHING",
+      "title": "STEM Teaching Assistant",
+      "metaDescription": "Assisted in delivering STEM workshops to secondary school students, covering physical computing, Arduino programming, and creative technology.",
+      "cardDesc": "Assisted in delivering STEM workshops to secondary school students, covering physical computing, Arduino programming, and creative technology.",
+      "techStackInline": "Arduino • STEM Education • Workshop Design",
+      "tagline": "Assisted in delivering STEM workshops to secondary school students, covering physical computing, Arduino programming, and creative technology.",
+      "cardImage": {
+        "src": "assets/projects/stem-teaching/card.jpg",
+        "placeholderBg": "#eef2e4",
+        "alt": "STEM Teaching Assistant"
+      },
+      "hero": {
+        "src": "../assets/projects/stem-teaching/hero.jpg",
+        "placeholderBg": "#eef2e4",
+        "alt": "STEM Teaching Assistant hero"
+      },
+      "sections": {
+        "problem": "content/stem-teaching/problem.md",
+        "process": "content/stem-teaching/process.md",
+        "result": "content/stem-teaching/result.md"
+      },
+      "meta": {
+        "role": "Teaching Assistant",
+        "timeline": "TBD",
+        "techStack": [
+          "Arduino",
+          "STEM Education",
+          "Workshop Design"
+        ]
+      },
+      "links": []
+    }
+  ]
+}

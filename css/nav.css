@@ -1,0 +1,113 @@
+/* ========================================================
+       導航欄 — Fixed 固定在視窗頂部
+       backdrop-filter 製造毛玻璃效果（捲動時背景模糊）
+    ======================================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      z-index: 100;
+      /* 半透明淺底 + 模糊（與 --color-bg 呼應） */
+      /* background: rgba(242, 242, 242, 0.88); */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 var(--page-gutter);
+    }
+
+    /* 專案內頁：nav 直向堆疊（pill 在上、作品標題在下） */
+    .nav.nav--project {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-3);
+      height: auto;
+      min-height: var(--nav-height);
+      padding: var(--space-4) var(--page-gutter) var(--space-3);
+      box-sizing: border-box;
+    }
+
+    /* 進場動畫：標題從 pill 下方「穿出」時需由 pill 遮蓋較上緣 */
+    .nav.nav--project .nav-pill-group {
+      z-index: 2;
+    }
+
+    /* Pill group 外框容器 */
+    .nav-pill-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      padding: var(--space-1);
+    }
+
+    /* iOS-style moving indicator (behind pills) */
+    .nav-indicator {
+      position: absolute;
+      /* 讓藍色膠囊和外框留白一致（更像 iOS segmented control） */
+      top: 4px;
+      bottom: 4px;
+      left: 0;
+      width: 0px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary);
+      transform: translate3d(0, 0, 0);
+      transition:
+        transform 520ms cubic-bezier(0.2, 0.9, 0.2, 1),
+        width 520ms cubic-bezier(0.2, 0.9, 0.2, 1);
+      will-change: transform, width;
+      z-index: 0;
+    }
+
+    /* 單個 pill 按鈕 */
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      /* Google Sans Flex：nav 文字用稍窄字寬 */
+      font-variation-settings: "slnt" 0, "wdth" 95, "GRAD" 0, "ROND" 0;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: color var(--transition), background var(--transition);
+      border: none;
+      background: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-pill:hover {
+      color: var(--color-text);
+    }
+
+    /* Active pill：藍色填底 */
+    .nav-pill.active {
+      color: #ffffff;
+    }
+
+    /* 第三個 breadcrumb pill — Project Details 頁才顯示 */
+    #nav-breadcrumb {
+      display: none;
+    }
+
+    /* Sub-pages：第三個 pill 為 span（作品標題）時，沿用 active 外觀、禁止誤認為按鈕 */
+    span.nav-pill {
+      cursor: default;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      .nav-pill {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
+      }
+    }

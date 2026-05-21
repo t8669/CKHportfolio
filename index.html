@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-page="about">
+<head>
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chan Kwok Hin — Tech & Interactive Media Developer</title>
+  <meta name="description" content="Portfolio of Chan Kwok Hin (Tony), Tech & Interactive Media Developer. Apps, Games, Interactive Installations, Physical Devices." />
+
+  <!-- ========================================================
+       字體載入：Google Sans Flex（主字體）+ JetBrains Mono（程式碼區塊專用）
+       Google Sans Flex 為可變字體，支援 wght / wdth / slnt / GRAD / ROND 軸
+  ======================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <!-- 無障礙：鍵盤用戶快速跳到主內容 -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- ========================================================
+       導航欄 — Fixed 固定頂部，三個 pill 按鈕切換頁面
+  ======================================================== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-pill-group">
+      <span class="nav-indicator" aria-hidden="true"></span>
+
+      <!-- About pill：預設 active -->
+      <button
+        class="nav-pill active"
+        id="nav-about"
+        onclick="showPage('about')"
+        aria-label="Go to About page"
+      >About</button>
+
+      <!-- My Work pill -->
+      <button
+        class="nav-pill"
+        id="nav-work"
+        onclick="showPage('work')"
+        aria-label="Go to My Work page"
+      >My Work</button>
+
+      <!-- Breadcrumb pill：只在 Project Details 頁顯示，文字由 JS 動態填入 -->
+      <button
+        class="nav-pill"
+        id="nav-breadcrumb"
+        aria-label="Current project"
+        aria-live="polite"
+      ></button>
+
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       主內容區
+  ======================================================== -->
+  <main id="main-content">
+
+    <!-- ======================================================
+         頁面：About Me
+    ====================================================== -->
+    <div id="page-about" class="page active" role="region" aria-label="About Me">
+      <div class="container">
+
+        <!-- 英雄區：左側標題 + 右側 Code Block -->
+        <section class="hero-block" aria-label="Introduction">
+
+          <!-- 左欄：名字、職稱、副標題 -->
+          <div class="hero-left">
+            <p class="hero-label">I am Chan Kwok Hin Tony</p>
+            <h1 class="hero-title">Tech &amp; Interactive Media Developer</h1>
+            <p class="hero-subtitle">Apps &middot; Games &middot; Interactive Installations &middot; Physical Devices</p>
+          </div>
+
+          <!-- 右欄：程式碼風格的個人資料展示 -->
+          <div class="hero-right">
+            <div
+              class="code-block"
+              id="profile-code-block"
+              role="img"
+              aria-label="Developer profile as code"
+              aria-busy="true"
+            >
+              <pre><code id="profile-code"></code></pre>
+            </div>
+          </div>
+
+        </section>
+        <!-- END Hero Block -->
+
+        <!-- Tagline 橫幅（外圈 glow / scroll 出場見 home.css + home.js） -->
+        <div class="tagline-banner" aria-label="Tagline">
+          <div class="tagline-banner__inner">
+            <span class="tagline-quote tagline-quote--open" aria-hidden="true">&#x201C;</span>
+            <span class="tagline-quote tagline-quote--close" aria-hidden="true">&#x201D;</span>
+            <p>I build things that work.</p>
+          </div>
+        </div>
+
+        <!-- About Me：Bio + Experience 雙欄 -->
+        <section class="about-section" aria-labelledby="about-heading">
+          <h2 id="about-heading">About Me</h2>
+          <div class="about-grid">
+
+            <!-- 左欄：個人簡介 + Currently badge -->
+            <div class="bio-col">
+              <p class="section-label">Bio</p>
+              <p>
+                Final-year Creative Media student at City University of Hong Kong, 
+                building at the intersection of software, hardware, and interaction design.
+
+                <br><br>
+                
+                Most developers write code. Most designers make interfaces. I do both — 
+                and when the problem calls for it, I fabricate the physical object too. 
+                My FYP combined custom Arduino hardware, Godot-powered projections, and 
+                9 original IP characters into a single installation. My other work spans 
+                Firebase-backed Android apps and sensor-driven rehabilitation tools.
+
+                <br><br>
+                
+                I work with AI as a force multiplier — not to replace thinking, but to 
+                compress the distance between a problem and a working solution. That means 
+                directing AI with real-world context it cannot source itself: recording 
+                actual motion data to anchor algorithm design, feeding domain knowledge 
+                that has no training set. The goal is always the same — spend less 
+                attention on implementation mechanics, and more on the problem that 
+                actually matters.
+              </p>
+              <!-- 修改此處以更新身份標籤文字 -->
+              <span class="badge">Currently: Final-year Creative Media student @ CityU HK</span>
+            </div>
+
+            <!-- 右欄：工作經歷時間線 -->
+            <div class="experience-col">
+              <p class="section-label">Experience</p>
+              <ul class="exp-list" aria-label="Work experience">
+
+                <!-- 每個 exp-item：公司名 / 職位（藍色）/ 年份（右） -->
+                <li class="exp-item">
+                  <div class="exp-info">
+                    <span class="exp-company">BBA Global Business — CityU HK</span>
+                    <span class="exp-role">Website UI/UX Designer</span>
+                  </div>
+                  <span class="exp-year">2023 – 2024</span>
+                </li>
+
+                <li class="exp-item">
+                  <div class="exp-info">
+                    <span class="exp-company">Furniture Station</span>
+                    <span class="exp-role">Graphic Designer</span>
+                  </div>
+                  <span class="exp-year">Jun – Sep 2023</span>
+                </li>
+
+                <li class="exp-item">
+                  <div class="exp-info">
+                    <span class="exp-company">Echouse</span>
+                    <span class="exp-role">Marketing Executive</span>
+                  </div>
+                  <span class="exp-year">Jan – Jul 2023</span>
+                </li>
+
+                <li class="exp-item">
+                  <div class="exp-info">
+                    <span class="exp-company">SCM Student Event Team — CityU</span>
+                    <span class="exp-role">Visual Design Director</span>
+                  </div>
+                  <span class="exp-year">2023 – 2024</span>
+                </li>
+
+                <li class="exp-item">
+                  <div class="exp-info">
+                    <span class="exp-company">Anything But Limited 不正常研究所</span>
+                    <span class="exp-role">Internship</span>
+                  </div>
+                  <span class="exp-year">July – July 2025</span>
+                </li>
+
+                <li class="exp-item">
+                  <div class="exp-info">
+                    <span class="exp-company">City University of Hong Kong</span>
+                    <span class="exp-role">Jockey Club Project IDEA Teaching Assistant</span>
+                  </div>
+                  <span class="exp-year">Oct 2025 – March 2026</span>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+        </section>
+        <!-- END About Me Section -->
+
+        <!-- Skills Section：三欄卡片 -->
+        <section class="skills-section" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">My Skills</h2>
+          <div class="skills-grid">
+
+            <div class="skill-card">
+              <p class="section-label">Development</p>
+              <div class="skill-icon-grid">
+                <div class="skill-item">Android / Java</div>
+                <div class="skill-item">Kotlin</div>
+                <div class="skill-item">HTML / CSS / JS</div>
+                <div class="skill-item">Firebase</div>
+                <div class="skill-item">Godot</div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <p class="section-label">Hardware &amp; Physical</p>
+              <div class="skill-icon-grid">
+                <div class="skill-item">Arduino</div>
+                <div class="skill-item">ESP32</div>
+                <div class="skill-item">3D Printing</div>
+                <div class="skill-item">Acrylic Fabrication</div>
+                <div class="skill-item">Sensor Integration</div>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <p class="section-label">Design &amp; Creative</p>
+              <div class="skill-icon-grid">
+                <div class="skill-item">UI/UX Design</div>
+                <div class="skill-item">Figma</div>
+                <div class="skill-item">Adobe Creative Suite</div>
+                <div class="skill-item">IP Character Design</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- END Skills Section -->
+
+        <!-- CTA Banner：僅右側 copy 按鈕可複製 email（見 home.js + home.css） -->
+        <div class="cta-banner">
+          <span class="cta-banner__headline">Let's Build Something.</span>
+          <div class="cta-banner__email-row">
+            <span class="cta-banner__email">t86692426kwok@gmail.com</span>
+            <button
+              type="button"
+              class="cta-banner__copy-btn"
+              data-email="t86692426kwok@gmail.com"
+              aria-label="Copy email t86692426kwok@gmail.com to clipboard"
+            >
+              <svg class="cta-banner__icon-copy" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <svg class="cta-banner__icon-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </button>
+          </div>
+          <span class="cta-banner__hint" aria-live="polite">Click the copy button</span>
+        </div>
+
+      </div>
+    </div>
+    <!-- END #page-about -->
+
+
+    <!-- ======================================================
+         頁面：My Work — 作品列表（連結至 projects/*.html）
+    ====================================================== -->
+    <div id="page-work" class="page" role="region" aria-label="My Work">
+      <div class="container">
+
+        <div class="work-header">
+          <h2>My Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- BUILD:PROJECTS_START -->
+
+          <a
+            href="./projects/tea-sensory-lab.html"
+            class="project-card featured"
+            aria-label="View Tea Sensory Lab case study"
+          >
+            <div class="card-image">
+              <img src="assets/projects/tea-sensory-lab/card.png" alt="Tea Sensory Lab" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category-badge">HARDWARE</span>
+                <span class="tech-stack-inline">Godot • Arduino • ESP32 • 3D Printing</span>
+              </div>
+              <h3 class="card-title">Tea Sensory Lab</h3>
+              <p class="card-desc">A phygital FYP installation that guides users through a gamified multisensory journey to discover their personalised Tea Spirit.</p>
+              <span class="case-study-link" aria-hidden="true">View Case Study →</span>
+            </div>
+          </a>
+
+          <a
+            href="./projects/citylog.html"
+            class="project-card"
+            aria-label="View CityLog case study"
+          >
+            <div class="card-image">
+              <img src="../assets/projects/firebase-app/introGallery/CityLog_1.png" alt="citylog" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category-badge">APP</span>
+                <span class="tech-stack-inline">Android • Full-Stack • Firebase • Cloud Functions</span>
+              </div>
+              <h3 class="card-title">CityLog</h3>
+              <p class="card-desc">An Android app for leaving and discovering place-bound micro-stories — unlocked only when you're physically nearby.</p>
+              <span class="case-study-link" aria-hidden="true">View Case Study →</span>
+            </div>
+          </a>
+
+          <a
+            href="./projects/frozen-shoulder-coach.html"
+            class="project-card"
+            aria-label="View Frozen Shoulder Home Coach case study"
+          >
+            <div class="card-image">
+              <img src="assets/projects/frontend-app/FrozenShoulderHomeCoach_1.png" alt="Frontend Mobile App" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="category-badge">APP</span>
+                <span class="tech-stack-inline">Android • Java • Accelerometer • Sensor Fusion</span>
+              </div>
+              <h3 class="card-title">Frozen Shoulder Home Coach</h3>
+              <p class="card-desc">An Android app that turns your phone into a real-time rehabilitation coach for frozen shoulder — guiding exercises, counting reps, and tracking daily progress.</p>
+              <span class="case-study-link" aria-hidden="true">View Case Study →</span>
+            </div>
+          </a>
+
+
+
+        <!-- BUILD:PROJECTS_END -->
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ======================================================
+         頁面：Project Details（Phase 3 開發）
+    ====================================================== -->
+    <div id="page-project" class="page" role="region" aria-label="Project Details">
+      <div class="container">
+        <h2 style="color: var(--color-text-muted); padding: var(--space-16) 0; text-align:center;">
+          Project Details — Phase 3
+        </h2>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <script src="js/home.js"></script>
+
+</body>
+</html>
