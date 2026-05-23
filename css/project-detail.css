@@ -6,6 +6,7 @@
 /* 專案內頁：nav 變高（pill + 作品標題），body 預留頂部空間避免內容被 fixed nav 遮擋 */
 body.project-detail {
   padding-top: clamp(9.5rem, 24vh, 12.5rem);
+  --meta-peek-height: 3.5rem;
 }
 
 html:has(body.project-detail) {
@@ -529,6 +530,31 @@ blockquote p {
   border: none;
 }
 
+.meta-sheet-scrim {
+  display: none;
+}
+
+.meta-sheet {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.meta-sheet-toggle {
+  display: none;
+}
+
+.meta-sheet-panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.meta-sheet-grabber,
+.meta-sheet-chevron {
+  display: none;
+}
+
 .meta-card-inner {
   /* max-width：寬度上限。width: fit-content：實際寬度隨內容變長變短，不會一律撐滿 max-width（若寫 width:100% 則在父層夠寬時會固定成 min(100%, max-width)） */
   /* max-width: min(600px, 100%); */
@@ -675,6 +701,178 @@ blockquote p {
   filter: brightness(0) invert(1);
 }
 
+/* ── Desktop：維持 sticky 浮卡，隱藏 sheet 控制項 ── */
+@media (min-width: 769px) {
+  .meta-sheet {
+    display: contents;
+  }
+
+  .meta-sheet-panel,
+  .meta-sheet-panel[hidden] {
+    display: contents !important;
+  }
+}
+
+/* ── Mobile：Bottom sheet + peek ── */
+@media (max-width: 768px) {
+  .project-meta-card {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 50;
+    padding: 0;
+    pointer-events: none;
+    display: block;
+  }
+
+  .meta-sheet-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+    cursor: pointer;
+  }
+
+  .meta-sheet-scrim[hidden] {
+    display: block;
+  }
+
+  .project-meta-card.is-meta-expanded .meta-sheet-scrim {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .meta-sheet {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: min(45vh, 420px);
+    margin-inline: auto;
+    background: color-mix(in srgb, var(--color-surface-2) 88%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+    border-bottom: none;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    box-shadow:
+      0 -8px 32px rgba(0, 0, 0, 0.08),
+      0 -2px 8px rgba(0, 0, 0, 0.04);
+    transition: max-height 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .project-meta-card:not(.is-meta-expanded) .meta-sheet {
+    max-height: calc(var(--meta-peek-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .meta-sheet-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    min-height: var(--meta-peek-height);
+    padding: var(--space-2) var(--space-4) var(--space-3);
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: left;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .meta-sheet-toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+  }
+
+  .meta-sheet-grabber {
+    display: block;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 0.25rem;
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--color-text) 28%, transparent);
+  }
+
+  .meta-sheet-peek {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--color-text-muted);
+  }
+
+  .meta-sheet-chevron {
+    display: block;
+    flex-shrink: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 2px solid var(--color-text-muted);
+    border-bottom: 2px solid var(--color-text-muted);
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .project-meta-card.is-meta-expanded .meta-sheet-chevron {
+    transform: rotate(-135deg) translateY(2px);
+  }
+
+  .meta-sheet-panel {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .meta-sheet-panel[hidden] {
+    display: none !important;
+  }
+
+  .project-meta-card.is-meta-expanded .meta-sheet-panel {
+    display: block !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .meta-sheet-panel .meta-card-inner {
+    width: 100%;
+    margin: 0;
+    transform: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    max-height: none;
+  }
+
+  .meta-sheet-panel .meta-card-inner:hover {
+    transform: none;
+  }
+
+  .project-scroll-content {
+    padding-bottom: calc(var(--meta-peek-height) + env(safe-area-inset-bottom, 0px) + var(--space-4));
+  }
+}
+
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -762,6 +960,33 @@ blockquote p {
 }
 
 @media (max-width: 768px) {
+  body.project-detail {
+    --page-gutter: clamp(0.75rem, 4vw, 1.25rem);
+  }
+
+  .case-content {
+    padding-inline: 0;
+  }
+
+  .case-content p,
+  .case-content ol,
+  .case-content ul {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+
+  .case-content h2 {
+    font-size: var(--text-lg);
+  }
+
+  .case-content h3 {
+    font-size: var(--text-base);
+  }
+
+  .case-content h4 {
+    font-size: var(--text-sm);
+  }
+
   .process-images {
     grid-template-columns: 1fr;
   }
@@ -783,8 +1008,7 @@ blockquote p {
     display: block;
     margin: var(--space-6) auto;
   }
-  .meta-card-inner {
-    width: 100%;
+  .meta-sheet-panel .meta-card-inner {
     grid-template-columns: 1fr;
     gap: var(--space-4);
     padding: var(--space-4);
@@ -817,6 +1041,112 @@ blockquote p {
     bottom: calc(-1 * var(--space-16));
     transform: none;
   }
+
+  /* 481–768px：表格橫向捲動，維持三欄佈局 */
+  .table-wrap {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    margin-inline: calc(-1 * var(--page-gutter));
+    padding-inline: var(--page-gutter);
+    width: auto;
+    max-width: none;
+  }
+
+  .case-content table,
+  .case-table {
+    min-width: 36rem;
+    table-layout: auto;
+    font-size: var(--text-sm);
+  }
+
+  .case-content th,
+  .case-content td,
+  .case-table th,
+  .case-table td {
+    padding: var(--space-2) var(--space-3);
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 480px) {
+  .meta-sheet-panel .meta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .meta-sheet-panel .meta-actions .icon-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* ≤480px：表格改為卡片堆疊 */
+  .table-wrap {
+    overflow-x: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .case-content table,
+  .case-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .case-content thead,
+  .case-table thead {
+    display: none;
+  }
+
+  .case-content tbody tr,
+  .case-table tbody tr {
+    display: block;
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .case-content tbody tr:last-child,
+  .case-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .case-content tbody td,
+  .case-table tbody td {
+    display: block;
+    padding: var(--space-2) 0;
+    border-bottom: none;
+  }
+
+  .case-content tbody td:not(:last-child),
+  .case-table tbody td:not(:last-child) {
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .case-content tbody td::before,
+  .case-table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-1);
+  }
+
+  .case-content tbody td:first-child,
+  .case-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--color-text);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -828,6 +1158,12 @@ blockquote p {
   .meta-card-inner,
   .meta-card-inner:hover {
     transform: none;
+    transition: none;
+  }
+
+  .meta-sheet,
+  .meta-sheet-scrim,
+  .meta-sheet-chevron {
     transition: none;
   }
 

@@ -223,6 +223,7 @@
 <hr>
 <h2>System Architecture</h2>
 <p>The app follows a strict <strong>MVVM pattern</strong> (Repository-ViewModel-Activity) with a full Firebase backend, structured across three layers:</p>
+<div class="table-wrap">
 <table>
 <thead>
 <tr>
@@ -231,18 +232,19 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Frontend</strong></td>
-<td>Android / Kotlin; 8 Activities, 3 Fragments, 8 ViewModels</td>
+<td data-label="Layer"><strong>Frontend</strong></td>
+<td data-label="Responsibility">Android / Kotlin; 8 Activities, 3 Fragments, 8 ViewModels</td>
 </tr>
 <tr>
-<td><strong>Backend</strong></td>
-<td>Firestore, Firebase Storage, Cloud Functions (Node.js)</td>
+<td data-label="Layer"><strong>Backend</strong></td>
+<td data-label="Responsibility">Firestore, Firebase Storage, Cloud Functions (Node.js)</td>
 </tr>
 <tr>
-<td><strong>Communication</strong></td>
-<td>Repository pattern: no direct Firestore access from Views or Activities</td>
+<td data-label="Layer"><strong>Communication</strong></td>
+<td data-label="Responsibility">Repository pattern: no direct Firestore access from Views or Activities</td>
 </tr>
 </tbody></table>
+</div>
 <p>The Repository layer handles all data operations, backed by Firestore Security Rules that block any client-side write to sensitive aggregate fields (<code>upvoteCount</code>, <code>downvoteCount</code>, <code>commentCount</code>).</p>
 <hr>
 <h2>Key Technical Decisions</h2>
@@ -322,32 +324,45 @@ server-side aggregate fields from client manipulation</li>
         </div>
       </div>
 
-      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
-        <div class="meta-card-inner">
+      <div class="project-meta-card" id="project-meta-card" data-meta-sheet>
+        <div class="meta-sheet-scrim" hidden aria-hidden="true"></div>
+        <div class="meta-sheet" role="region" aria-label="Project metadata">
+          <button
+            type="button"
+            class="meta-sheet-toggle"
+            aria-expanded="false"
+            aria-controls="meta-sheet-panel"
+          >
+            <span class="meta-sheet-grabber" aria-hidden="true"></span>
+            <span class="meta-sheet-peek">Backend Developer &amp; System Architect &middot; 3 Weeks · 2026 &middot; 1 link</span>
+            <span class="meta-sheet-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="meta-sheet-panel" id="meta-sheet-panel" hidden>
+            <div class="meta-card-inner">
 
-          <div class="meta-col meta-col--primary">
-            <div class="meta-group">
-              <span class="meta-label">My Role</span>
-              <span class="meta-value">Backend Developer & System Architect</span>
-            </div>
-            <div class="meta-group">
-              <span class="meta-label">Timeline</span>
-              <span class="meta-value">3 Weeks · 2026</span>
-            </div>
-          </div>
+              <div class="meta-col meta-col--primary">
+                <div class="meta-group">
+                  <span class="meta-label">My Role</span>
+                  <span class="meta-value">Backend Developer & System Architect</span>
+                </div>
+                <div class="meta-group">
+                  <span class="meta-label">Timeline</span>
+                  <span class="meta-value">3 Weeks · 2026</span>
+                </div>
+              </div>
 
-          <div class="meta-col meta-col--stack">
-            <div class="meta-group meta-group--stack">
-              <span class="meta-label">Tech Stack</span>
-              <ul class="tech-stack-list">
-                                <li>Android Studio</li>
+              <div class="meta-col meta-col--stack">
+                <div class="meta-group meta-group--stack">
+                  <span class="meta-label">Tech Stack</span>
+                  <ul class="tech-stack-list">
+                                    <li>Android Studio</li>
                 <li>MVVM</li>
                 <li>Firestore</li>
                 <li>Cloud Functions</li>
                 <li>Google Maps API</li>
-              </ul>
-            </div>
-          </div>
+                  </ul>
+                </div>
+              </div>
 
           <div class="meta-col meta-col--actions">
             <div class="meta-actions">
@@ -357,6 +372,8 @@ server-side aggregate fields from client manipulation</li>
             </div>
           </div>
 
+            </div>
+          </div>
         </div>
       </div>
 
@@ -455,5 +472,6 @@ server-side aggregate fields from client manipulation</li>
     ];
   </script>
   <script src="../js/project-lightbox.js" defer></script>
+  <script src="../js/project-meta-sheet.js" defer></script>
 </body>
 </html>

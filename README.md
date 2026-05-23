@@ -69,7 +69,7 @@ See **[docs/PROJECT-IMAGES.md](docs/PROJECT-IMAGES.md)** for folder layout, Tea 
 
 ### Tables
 
-Markdown pipe tables are styled automatically: **100% width**, equal column split, and cell padding. No extra markup is required:
+Markdown pipe tables are styled automatically: the build wraps each table in `.table-wrap`, injects `data-label` on cells from header text, and applies responsive CSS — **≥769px** full-width table; **481–768px** horizontal scroll with a minimum table width; **≤480px** stacked cards with column labels. No extra markup is required:
 
 ```markdown
 | Species | Silhouette Base | Tea Types | Design Language |

@@ -190,6 +190,7 @@ story. A QR code appears on screen to save and share your result.</p>
 <hr>
 <h2>System Architecture</h2>
 <p>The installation runs across four zones inside a single Lab cabinet, all communicating with a <strong>Godot state-machine controller</strong> via Serial protocol.</p>
+<div class="table-wrap">
 <table>
 <thead>
 <tr>
@@ -199,26 +200,27 @@ story. A QR code appears on screen to save and share your result.</p>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Zone 1</strong> — Quiz</td>
-<td>Slide cup to navigate, shake to confirm</td>
-<td>ESP32-C3 + MPU6050 Smart Teacup, IR touch surface</td>
+<td data-label="Zone"><strong>Zone 1</strong> — Quiz</td>
+<td data-label="Interaction">Slide cup to navigate, shake to confirm</td>
+<td data-label="Hardware">ESP32-C3 + MPU6050 Smart Teacup, IR touch surface</td>
 </tr>
 <tr>
-<td><strong>Zone 2</strong> — Ingredients</td>
-<td>Lift the correct ingredient bottles</td>
-<td>FSR array × 11 stations</td>
+<td data-label="Zone"><strong>Zone 2</strong> — Ingredients</td>
+<td data-label="Interaction">Lift the correct ingredient bottles</td>
+<td data-label="Hardware">FSR array × 11 stations</td>
 </tr>
 <tr>
-<td><strong>Zone 2.5</strong> — Scent</td>
-<td>Squeeze air bulb to release aroma</td>
-<td>Sound-peak sensor + pneumatic scent tower</td>
+<td data-label="Zone"><strong>Zone 2.5</strong> — Scent</td>
+<td data-label="Interaction">Squeeze air bulb to release aroma</td>
+<td data-label="Hardware">Sound-peak sensor + pneumatic scent tower</td>
 </tr>
 <tr>
-<td><strong>Zone 3</strong> — Ritual</td>
-<td>Scan spirit with slider, high-five to claim</td>
-<td>Linear potentiometer + capacitive touch sensor + 9-channel motorised dispenser</td>
+<td data-label="Zone"><strong>Zone 3</strong> — Ritual</td>
+<td data-label="Interaction">Scan spirit with slider, high-five to claim</td>
+<td data-label="Hardware">Linear potentiometer + capacitive touch sensor + 9-channel motorised dispenser</td>
 </tr>
 </tbody></table>
+</div>
 <hr>
 <h2>Key Technical Decisions</h2>
 <h3>Game Engine — HTML vs Godot</h3>
@@ -316,6 +318,7 @@ story. A QR code appears on screen to save and share your result.</p>
 <hr>
 <h2>Visual &amp; Character Design</h2>
 <p>Nine Tea Spirit IP characters were designed under a <strong>modular species system</strong>, linking each character&#39;s shape and colour directly to its tea profile.</p>
+<div class="table-wrap">
 <table>
 <thead>
 <tr>
@@ -326,24 +329,25 @@ story. A QR code appears on screen to save and share your result.</p>
 </tr>
 </thead>
 <tbody><tr>
-<td>Floral</td>
-<td>Circle</td>
-<td>Jasmine, Osmanthus, Rose</td>
-<td>Soft, rounded, approachable</td>
+<td data-label="Species">Floral</td>
+<td data-label="Silhouette Base">Circle</td>
+<td data-label="Tea Types">Jasmine, Osmanthus, Rose</td>
+<td data-label="Design Language">Soft, rounded, approachable</td>
 </tr>
 <tr>
-<td>Fruity</td>
-<td>Rectangle</td>
-<td>Lemon, Peach, Asian Pear</td>
-<td>Relaxed, elongated, chill vibe</td>
+<td data-label="Species">Fruity</td>
+<td data-label="Silhouette Base">Rectangle</td>
+<td data-label="Tea Types">Lemon, Peach, Asian Pear</td>
+<td data-label="Design Language">Relaxed, elongated, chill vibe</td>
 </tr>
 <tr>
-<td>Floral-Fruity</td>
-<td>Triangle</td>
-<td>Chamomile blends</td>
-<td>Balanced, expressive</td>
+<td data-label="Species">Floral-Fruity</td>
+<td data-label="Silhouette Base">Triangle</td>
+<td data-label="Tea Types">Chamomile blends</td>
+<td data-label="Design Language">Balanced, expressive</td>
 </tr>
 </tbody></table>
+</div>
 <div class="case-content-images">
 <div class="case-content-img-wrap"
                 onclick="openLightbox(16)"
@@ -389,33 +393,46 @@ story. A QR code appears on screen to save and share your result.</p>
         </div>
       </div>
 
-      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
-        <div class="meta-card-inner">
+      <div class="project-meta-card" id="project-meta-card" data-meta-sheet>
+        <div class="meta-sheet-scrim" hidden aria-hidden="true"></div>
+        <div class="meta-sheet" role="region" aria-label="Project metadata">
+          <button
+            type="button"
+            class="meta-sheet-toggle"
+            aria-expanded="false"
+            aria-controls="meta-sheet-panel"
+          >
+            <span class="meta-sheet-grabber" aria-hidden="true"></span>
+            <span class="meta-sheet-peek">Hardware Developer &amp; Visual Designer &middot; Nov 2025 – Apr 2026 &middot; 1 link</span>
+            <span class="meta-sheet-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="meta-sheet-panel" id="meta-sheet-panel" hidden>
+            <div class="meta-card-inner">
 
-          <div class="meta-col meta-col--primary">
-            <div class="meta-group">
-              <span class="meta-label">My Role</span>
-              <span class="meta-value">Hardware Developer & Visual Designer</span>
-            </div>
-            <div class="meta-group">
-              <span class="meta-label">Timeline</span>
-              <span class="meta-value">Nov 2025 – Apr 2026</span>
-            </div>
-          </div>
+              <div class="meta-col meta-col--primary">
+                <div class="meta-group">
+                  <span class="meta-label">My Role</span>
+                  <span class="meta-value">Hardware Developer & Visual Designer</span>
+                </div>
+                <div class="meta-group">
+                  <span class="meta-label">Timeline</span>
+                  <span class="meta-value">Nov 2025 – Apr 2026</span>
+                </div>
+              </div>
 
-          <div class="meta-col meta-col--stack">
-            <div class="meta-group meta-group--stack">
-              <span class="meta-label">Tech Stack</span>
-              <ul class="tech-stack-list">
-                                <li>Godot</li>
+              <div class="meta-col meta-col--stack">
+                <div class="meta-group meta-group--stack">
+                  <span class="meta-label">Tech Stack</span>
+                  <ul class="tech-stack-list">
+                                    <li>Godot</li>
                 <li>Arduino</li>
                 <li>ESP32</li>
                 <li>Serial Communication</li>
                 <li>Acrylic Fabrication</li>
                 <li>3D Printing</li>
-              </ul>
-            </div>
-          </div>
+                  </ul>
+                </div>
+              </div>
 
           <div class="meta-col meta-col--actions">
             <div class="meta-actions">
@@ -425,6 +442,8 @@ story. A QR code appears on screen to save and share your result.</p>
             </div>
           </div>
 
+            </div>
+          </div>
         </div>
       </div>
 
@@ -519,5 +538,6 @@ story. A QR code appears on screen to save and share your result.</p>
     ];
   </script>
   <script src="../js/project-lightbox.js" defer></script>
+  <script src="../js/project-meta-sheet.js" defer></script>
 </body>
 </html>

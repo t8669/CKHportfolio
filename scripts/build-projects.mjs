@@ -115,6 +115,74 @@ function enhanceHtmlWithLightbox(html, lightboxImages, nextIndexRef) {
   return out;
 }
 
+function stripHtmlTags(html) {
+  return String(html).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+}
+
+function injectTableDataLabels(tableHtml) {
+  const theadMatch = tableHtml.match(/<thead\b[^>]*>([\s\S]*?)<\/thead>/i);
+  if (!theadMatch) return tableHtml;
+
+  const labels = [...theadMatch[1].matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((m) =>
+    stripHtmlTags(m[1])
+  );
+  if (labels.length === 0) return tableHtml;
+
+  return tableHtml.replace(/<tbody\b[^>]*>[\s\S]*?<\/tbody>/i, (tbodyBlock) =>
+    tbodyBlock.replace(/<tr\b[^>]*>[\s\S]*?<\/tr>/gi, (row) => {
+      let col = 0;
+      return row.replace(/<td\b([^>]*)>([\s\S]*?)<\/td>/gi, (cellFull, attrs, content) => {
+        if (/\bdata-label\s*=/.test(attrs)) {
+          col += 1;
+          return cellFull;
+        }
+        const label = labels[col] ?? "";
+        col += 1;
+        const attrsTrimmed = attrs.trim();
+        const attrPrefix = attrsTrimmed ? ` ${attrsTrimmed}` : "";
+        return `<td${attrPrefix} data-label="${escapeHtml(label)}">${content}</td>`;
+      });
+    })
+  );
+}
+
+/** Wrap bare tables for horizontal scroll; inject data-label for mobile card layout. */
+function enhanceTables(html) {
+  const placeholders = [];
+  let placeholderIndex = 0;
+
+  const withoutPreWrapped = html.replace(
+    /<div class="table-wrap(?:\s[^"]*)?">\s*([\s\S]*?)\s*<\/div>/gi,
+    (block) => {
+      const key = `__TABLE_WRAP_PH_${placeholderIndex}__`;
+      placeholders.push({ key, block });
+      placeholderIndex += 1;
+      return key;
+    }
+  );
+
+  let out = withoutPreWrapped.replace(/<table\b[\s\S]*?<\/table>/gi, (tableHtml) => {
+    const withLabels = injectTableDataLabels(tableHtml);
+    return `<div class="table-wrap">\n${withLabels}\n</div>`;
+  });
+
+  for (const { key, block } of placeholders) {
+    const inner = block.replace(
+      /^<div class="table-wrap(?:\s[^"]*)?">\s*([\s\S]*?)\s*<\/div>$/i,
+      "$1"
+    );
+    const tableMatch = inner.match(/<table\b[\s\S]*?<\/table>/i);
+    if (tableMatch) {
+      const enhanced = injectTableDataLabels(tableMatch[0]);
+      out = out.replace(key, block.replace(tableMatch[0], enhanced));
+    } else {
+      out = out.replace(key, block);
+    }
+  }
+
+  return out;
+}
+
 /** Unwrap invalid <p><div>… and group consecutive wraps for two-column layout. */
 function groupConsecutiveContentImages(html) {
   const out = html.replace(
@@ -142,7 +210,8 @@ function renderSectionHtml(ref, slug, lightboxImages, nextIndexRef) {
   const md = loadSectionMarkdown(ref, slug);
   const rawHtml = marked.parse(md);
   const withLightbox = enhanceHtmlWithLightbox(String(rawHtml).trim(), lightboxImages, nextIndexRef);
-  return groupConsecutiveContentImages(withLightbox);
+  const withTables = enhanceTables(withLightbox);
+  return groupConsecutiveContentImages(withTables);
 }
 
 function renderIntroGallery(gallery, lightboxImages, nextIndexRef) {
@@ -266,6 +335,18 @@ function renderMetaActionsCol(links) {
             ${buttons}
             </div>
           </div>`;
+}
+
+function renderMetaPeekHtml(project) {
+  const role = escapeHtml(project.meta.role);
+  const timeline = escapeHtml(project.meta.timeline);
+  const linkCount = normalizeProjectLinks(project.links).length;
+  let text = `${role} &middot; ${timeline}`;
+  if (linkCount > 0) {
+    const label = linkCount === 1 ? "1 link" : `${linkCount} links`;
+    text += ` &middot; ${label}`;
+  }
+  return text;
 }
 
 function renderLightboxJson(lightbox) {
@@ -409,6 +490,7 @@ function buildDetailContext(project) {
     metaTimeline: project.meta.timeline,
     techStackListHtml: renderTechStackList(project.meta.techStack),
     metaActionsColHtml: renderMetaActionsCol(project.links),
+    metaPeekHtml: renderMetaPeekHtml(project),
     lightboxJson: renderLightboxJson(lightboxImages),
   };
 }

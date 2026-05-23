@@ -80,31 +80,46 @@
         </div>
       </div>
 
-      <div class="project-meta-card" role="complementary" aria-label="Project metadata">
-        <div class="meta-card-inner">
+      <div class="project-meta-card" id="project-meta-card" data-meta-sheet>
+        <div class="meta-sheet-scrim" hidden aria-hidden="true"></div>
+        <div class="meta-sheet" role="region" aria-label="Project metadata">
+          <button
+            type="button"
+            class="meta-sheet-toggle"
+            aria-expanded="false"
+            aria-controls="meta-sheet-panel"
+          >
+            <span class="meta-sheet-grabber" aria-hidden="true"></span>
+            <span class="meta-sheet-peek">{{metaPeekHtml}}</span>
+            <span class="meta-sheet-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="meta-sheet-panel" id="meta-sheet-panel" hidden>
+            <div class="meta-card-inner">
 
-          <div class="meta-col meta-col--primary">
-            <div class="meta-group">
-              <span class="meta-label">My Role</span>
-              <span class="meta-value">{{metaRole}}</span>
-            </div>
-            <div class="meta-group">
-              <span class="meta-label">Timeline</span>
-              <span class="meta-value">{{metaTimeline}}</span>
-            </div>
-          </div>
+              <div class="meta-col meta-col--primary">
+                <div class="meta-group">
+                  <span class="meta-label">My Role</span>
+                  <span class="meta-value">{{metaRole}}</span>
+                </div>
+                <div class="meta-group">
+                  <span class="meta-label">Timeline</span>
+                  <span class="meta-value">{{metaTimeline}}</span>
+                </div>
+              </div>
 
-          <div class="meta-col meta-col--stack">
-            <div class="meta-group meta-group--stack">
-              <span class="meta-label">Tech Stack</span>
-              <ul class="tech-stack-list">
-                {{techStackListHtml}}
-              </ul>
-            </div>
-          </div>
+              <div class="meta-col meta-col--stack">
+                <div class="meta-group meta-group--stack">
+                  <span class="meta-label">Tech Stack</span>
+                  <ul class="tech-stack-list">
+                    {{techStackListHtml}}
+                  </ul>
+                </div>
+              </div>
 
 {{metaActionsColHtml}}
 
+            </div>
+          </div>
         </div>
       </div>
 
@@ -126,5 +141,6 @@
     window.lbImages = {{lightboxJson}};
   </script>
   <script src="../js/project-lightbox.js" defer></script>
+  <script src="../js/project-meta-sheet.js" defer></script>
 </body>
 </html>
