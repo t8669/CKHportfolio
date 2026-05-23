@@ -204,22 +204,12 @@
           <section class="case-section" aria-labelledby="label-problem">
             <p class="section-label" id="label-problem">The Problem</p>
             <div class="case-content">
-              <p>Social media platforms like Instagram and Xiaohongshu are optimised for polished, 
-broadcast-style content tied to landmarks and major attractions. They are not built 
-for the kind of observation that makes city walking genuinely interesting — the quiet 
-detail on a side street, the atmosphere of a specific corner at a specific time, the 
-small discovery that is too subtle to post but too meaningful to forget.</p>
-<p>Existing map-based review apps like Google Maps or OpenRice surface ratings and 
-information, but strip away the human moment of noticing. They answer <em>what is here</em>, 
-not <em>what someone felt here</em>.</p>
+              <p>Social media apps like Instagram and Xiaohongshu are built for polished, broadcast-style content, such as landmarks, major attractions, highlight-reel moments. They&#39;re not built for the smaller observations that make city walking actually interesting: a detail on a side street, the atmosphere of a specific corner at a specific time, a small discovery that&#39;s too subtle to post but too easy to forget.</p>
+<p>Map-based review apps like Google Maps or OpenRice give you ratings and information, but lose the human side of noticing. They answer <em>what is here</em>, not <em>what someone felt here</em>.</p>
 <blockquote>
-<p>The gap is not a lack of content — it is a lack of a format that treats place-bound, 
-ephemeral observations as worth preserving. CityLog was built to fill that gap.</p>
+<p>The gap isn&#39;t a lack of content: it&#39;s a lack of a format that treats place-bound, personal observations as worth keeping. CityLog was built to fill that gap.</p>
 </blockquote>
-<p>We also identified a secondary problem: solo city exploration can feel isolating. 
-There is no existing tool that creates a sense of social presence through a 
-physical space — the feeling that others have walked here and left something behind 
-for you to find.</p>
+<p>There&#39;s also a secondary problem: exploring a city alone can feel isolating. No existing tool creates a sense of social presence through a physical space — the feeling that others have walked the same street and left something behind for you to find.</p>
             </div>
           </section>
 
@@ -228,19 +218,11 @@ for you to find.</p>
             <p class="section-label" id="label-process">The Process</p>
             <div class="case-content">
               <h2>Concept &amp; Differentiation</h2>
-<p>CityLog is not a review app, a city guide, or a conventional social feed. The core 
-distinction is <strong>place-bound discovery tied to physical movement</strong>: content is anchored 
-to GPS coordinates, hidden until a user is physically nearby, and ranked by a 
-combination of distance, freshness, and community reaction — not follower count or 
-algorithmic promotion.</p>
-<p>The MVP was scoped to deliver this core loop end-to-end within a <strong>3-week development 
-cycle</strong>, using AI-assisted tooling to accelerate boilerplate generation while 
-independently designing and implementing the backend architecture, data model, and 
-system logic.</p>
+<p>CityLog isn&#39;t a review app, a city guide, or a typical social feed. The key difference is <strong>place-bound discovery tied to physical movement</strong>: content is anchored to GPS coordinates, hidden until you&#39;re physically nearby, and ranked by a mix of distance, freshness, and community reaction, not follower count or algorithm.</p>
+<p>The MVP was scoped to deliver this core loop end-to-end within a <strong>3-week development cycle</strong>, using AI-assisted tooling to speed up generation and implementation, while independently designing the backend architecture, data model, and system logic.</p>
 <hr>
 <h2>System Architecture</h2>
-<p>The app follows a strict <strong>MVVM pattern</strong> (Repository-ViewModel-Activity) with a 
-complete Firebase backend, structured across three layers:</p>
+<p>The app follows a strict <strong>MVVM pattern</strong> (Repository-ViewModel-Activity) with a full Firebase backend, structured across three layers:</p>
 <table>
 <thead>
 <tr>
@@ -250,7 +232,7 @@ complete Firebase backend, structured across three layers:</p>
 </thead>
 <tbody><tr>
 <td><strong>Frontend</strong></td>
-<td>Android / Kotlin — 8 Activities, 3 Fragments, 8 ViewModels</td>
+<td>Android / Kotlin; 8 Activities, 3 Fragments, 8 ViewModels</td>
 </tr>
 <tr>
 <td><strong>Backend</strong></td>
@@ -258,93 +240,54 @@ complete Firebase backend, structured across three layers:</p>
 </tr>
 <tr>
 <td><strong>Communication</strong></td>
-<td>Repository pattern — no direct Firestore access from Views or Activities</td>
+<td>Repository pattern: no direct Firestore access from Views or Activities</td>
 </tr>
 </tbody></table>
-<p>The Repository layer handles all data operations, enforced by Firestore Security Rules 
-that prevent any client-side write to sensitive aggregate fields (<code>upvoteCount</code>, 
-<code>downvoteCount</code>, <code>commentCount</code>).</p>
+<p>The Repository layer handles all data operations, backed by Firestore Security Rules that block any client-side write to sensitive aggregate fields (<code>upvoteCount</code>, <code>downvoteCount</code>, <code>commentCount</code>).</p>
 <hr>
 <h2>Key Technical Decisions</h2>
 <h3>Location Querying — Lat/Lng Range Filter vs Geohash</h3>
-<p>A naive proximity query using two-dimensional latitude/longitude range filters 
-(<code>WHERE lat BETWEEN x AND y AND lng BETWEEN a AND b</code>) cannot be expressed in 
-Firestore, which only supports single-field range queries per request.</p>
+<p>A standard proximity query using two-dimensional lat/lng range filters (<code>WHERE lat BETWEEN x AND y AND lng BETWEEN a AND b</code>) doesn&#39;t work in Firestore, which only supports single-field range queries per request.</p>
 <ul>
-<li><strong>Geohash encoding</strong> converts a 2D coordinate into a 1D string where 
-lexicographic proximity maps to geographic proximity — a 100-metre radius 
-query becomes a set of string prefix ranges on a single indexed field</li>
-<li>Implemented using <strong>GeoFireUtils</strong> to compute query bounds, then applying 
-Haversine distance filtering client-side to cull false positives at the edges 
-of each geohash cell</li>
-<li>This approach supports Firestore&#39;s index model natively, without requiring a 
-dedicated geospatial service</li>
+<li><strong>Geohash encoding</strong> turns a 2D coordinate into a 1D string where nearby strings map to nearby locations — a 100-metre radius query becomes a set of string prefix ranges on a single indexed field</li>
+<li>Implemented using <strong>GeoFireUtils</strong> to calculate query bounds, then filtering by Haversine distance on the client side to trim false positives at geohash cell edges</li>
+<li>Works with Firestore&#39;s index model directly, without needing a dedicated geospatial service</li>
 </ul>
 <h3>Vote Aggregates — Client Increment vs Cloud Function Recount</h3>
-<p>Maintaining accurate <code>upvoteCount</code> and <code>downvoteCount</code> on each log document 
-introduced a classic <strong>race condition</strong>: if two users vote simultaneously and both 
-read the same count before writing, one increment is lost.</p>
+<p>Keeping accurate <code>upvoteCount</code> and <code>downvoteCount</code> on each log document introduced a classic <strong>race condition</strong>: if two users vote at the same time and both read the same count before writing, one increment gets lost.</p>
 <ul>
-<li>The initial approach used <code>FieldValue.increment()</code> directly from the client — 
-fast, but vulnerable to concurrent writes overwriting each other</li>
-<li>Final implementation uses an <strong>event-driven Cloud Function</strong> (<code>onVoteWrite</code>) 
-that triggers on any write to <code>logs/{logId}/votes/{userId}</code>, performs a full 
-recount from the votes subcollection, and writes authoritative totals back to 
-the parent document</li>
-<li>This is <strong>idempotent by design</strong> — even with Firebase&#39;s at-least-once delivery 
-guarantee, re-running the function on the same vote document produces the correct 
-result</li>
-<li>The UI applies <strong>optimistic updates</strong> via ViewModel LiveData for instant feedback, 
-with Firestore&#39;s <code>snapshotListener</code> reconciling the true value once the 
-Cloud Function completes</li>
+<li>The first approach used <code>FieldValue.increment()</code> directly from the client — fast, but open to concurrent writes overwriting each other</li>
+<li>The final approach uses an <strong>event-driven Cloud Function</strong> (<code>onVoteWrite</code>) that triggers on any write to <code>logs/{logId}/votes/{userId}</code>, does a full recount from the votes subcollection, and writes the correct totals back to the parent document</li>
+<li><strong>Idempotent by design</strong>: even with Firebase&#39;s at-least-once delivery, re-running the function on the same vote document always produces the right result</li>
+<li>The UI applies <strong>optimistic updates</strong> via ViewModel LiveData for instant feedback, with Firestore&#39;s <code>snapshotListener</code> correcting the value once the Cloud Function finishes</li>
 </ul>
 <h3>Area Labelling — Manual Input vs Automated Reverse Geocoding</h3>
-<p>Requiring users to manually label the area of each log would create friction and 
-inconsistent naming. Instead, an <code>onLogCreated</code> Cloud Function automatically resolves 
-a human-readable area label on every new log.</p>
+<p>Asking users to manually label the area of each log would cause friction and inconsistent naming. Instead, an <code>onLogCreated</code> Cloud Function automatically assigns a readable area label to every new log.</p>
 <ul>
 <li>Calls the <strong>Google Maps Reverse Geocoding API</strong> with the log&#39;s lat/lng coordinates</li>
-<li>A priority-type parser walks through the response&#39;s <code>addressComponents</code>, resolving 
-to the most specific meaningful label (street name → neighbourhood → district), 
-skipping useless values like standalone street numbers</li>
-<li>The UI displays a loading placeholder immediately on log creation; the Firestore 
-<code>snapshotListener</code> updates the label once the function completes — no polling required</li>
+<li>A priority-type parser goes through the response&#39;s <code>addressComponents</code>, picking the most specific useful label (street name → neighbourhood → district) and skipping bare street numbers</li>
+<li>The UI shows a loading placeholder right after log creation; the Firestore <code>snapshotListener</code> updates the label once the function completes, no polling needed</li>
 </ul>
 <h3>Background Geofencing — Notification Trigger Design</h3>
-<p>The app registers the <strong>top 20 highest-upvoted logs</strong> in the user&#39;s city as invisible 
-500-metre geofences using Android&#39;s <code>GeofencingClient</code> from Google Play Services.</p>
+<p>The app registers the <strong>top 20 highest-upvoted logs</strong> in the user&#39;s city as invisible 500-metre geofences using Android&#39;s <code>GeofencingClient</code> from Google Play Services.</p>
 <ul>
-<li>Requires both <code>FOREGROUND_LOCATION</code> and <code>ACCESS_BACKGROUND_LOCATION</code> permissions 
-to function reliably when the app is not in the foreground</li>
-<li>A <code>PendingIntent</code> fires to <code>CityHotGeofenceReceiver</code> on <code>GEOFENCE_TRANSITION_ENTER</code> 
-events</li>
-<li>An <strong><code>AppSessionFlags</code> throttle</strong> (10-minute cooldown) prevents repeated API calls 
-within the same session, avoiding Google Play Services rate limits and unnecessary 
-battery drain</li>
+<li>Requires both <code>FOREGROUND_LOCATION</code> and <code>ACCESS_BACKGROUND_LOCATION</code> permissions to work reliably when the app is in the background</li>
+<li>A <code>PendingIntent</code> fires to <code>CityHotGeofenceReceiver</code> on <code>GEOFENCE_TRANSITION_ENTER</code> events</li>
+<li>An <strong><code>AppSessionFlags</code> throttle</strong> (10-minute cooldown) stops repeated API calls within the same session, preventing Google Play Services rate limit hits and unnecessary battery drain</li>
 </ul>
 <h3>Security Model — Anonymous Auth for MVP Scope</h3>
-<p>The current implementation uses <strong>Firebase Anonymous Authentication</strong> exclusively — 
-a deliberate MVP scoping decision, not a permanent design choice. Anonymous auth 
-eliminates onboarding friction entirely while still providing a stable UID per device 
-for Firestore Security Rules enforcement.</p>
+<p>The current build uses <strong>Firebase Anonymous Authentication</strong> only, a deliberate MVP scoping decision, not a permanent choice. Anonymous auth removes all onboarding friction while still giving each device a stable UID for Firestore Security Rules.</p>
 <ul>
-<li>Users can set a display name, handle, and generated colour avatar, stored locally 
-and linked to their anonymous UID — creating a personal identity without requiring 
-an account</li>
-<li>Firestore Rules use <code>request.auth.uid</code> to enforce per-user vote uniqueness and 
-prevent unauthorised writes</li>
-<li>Google Sign-In, Apple Sign-In, and email authentication are scoped for the next 
-development phase when resources allow</li>
+<li>Users can set a display name, handle, and generated colour avatar, stored locally and tied to their anonymous UID — a personal identity with no account required</li>
+<li>Firestore Rules use <code>request.auth.uid</code> to enforce per-user vote uniqueness and block unauthorised writes</li>
+<li>Google Sign-In, Apple Sign-In, and email authentication are planned for the next development phase</li>
 </ul>
 <hr>
 <h2>Project Structure at Completion</h2>
 <ul>
 <li><strong>8 Activities</strong>, 3 Fragments, 8 ViewModels, 5 Repositories</li>
-<li><strong>5 Cloud Functions</strong>: <code>onVoteWrite</code> (vote recount), <code>onCommentWrite</code> 
-(comment count + owner notification), <code>onLogCreated</code> (reverse geocoding), 
-<code>getDailyTopLogs</code> (ranking build), FCM token management</li>
-<li>Firebase services used: <strong>Firestore, Storage, Cloud Functions, Cloud Messaging, 
-Anonymous Auth</strong></li>
+<li><strong>5 Cloud Functions</strong>: <code>onVoteWrite</code> (vote recount), <code>onCommentWrite</code> (comment count + owner notification), <code>onLogCreated</code> (reverse geocoding), <code>getDailyTopLogs</code> (ranking build), FCM token management</li>
+<li>Firebase services used: <strong>Firestore, Storage, Cloud Functions, Cloud Messaging, Anonymous Auth</strong></li>
 </ul>
             </div>
           </section>
@@ -358,15 +301,13 @@ Anonymous Auth</strong></li>
 almost full marks were achieved.&quot;</p>
 <p>— Jacky Cheung, Lecturer, SM3607</p>
 </blockquote>
-<p>Delivered as a <strong>fully functional Android MVP in 3 weeks</strong>, covering the complete 
-user journey from anonymous onboarding through log creation, proximity-based 
-discovery, social interaction, and physical postcard-style output via geofence 
-notifications.</p>
+<p>Delivered as a <strong>fully functional Android MVP in 3 weeks</strong>, covering from anonymous onboarding through log creation, proximity-based 
+discovery, social interaction, and geofence notifications.</p>
 <p>Key outcomes at submission:</p>
 <ul>
 <li>Ranked <strong>#1 in class</strong> for technical breadth across all project groups</li>
 <li>End-to-end location-aware architecture: geohash querying, 100-metre unlock radius, 
-and 500-metre geofence notification zones — all functional</li>
+and 500-metre geofence notification zones, all functional</li>
 <li>5 Cloud Functions handling vote aggregation, comment counts, reverse geocoding, 
 daily ranking, and push notification delivery</li>
 <li>Full MVVM architecture across 8 Activities and 5 Repositories, with zero direct 

@@ -1,4 +1,4 @@
-> "Distinguished by thorough background research and on-site fieldwork, strong hardware product design — including an independently developed card dispenser and scent-permeable storage vessels — and a cohesive visual and character identity throughout."
+> "Distinguished by thorough background research and on-site fieldwork, strong hardware product design, including an independently developed card dispenser and scent-permeable storage vessels, and a cohesive visual and character identity throughout."
 >
 > — FYP Supervisor, Ms. Koala Yip, School of Creative Media, CityU
 

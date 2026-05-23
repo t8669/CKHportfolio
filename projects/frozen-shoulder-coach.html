@@ -108,24 +108,12 @@
           <section class="case-section" aria-labelledby="label-problem">
             <p class="section-label" id="label-problem">The Problem</p>
             <div class="case-content">
-              <p>Frozen shoulder affects approximately <strong>3–5% of adults globally</strong>, but in Hong Kong 
-the picture is more pressing: <strong>90% of working adults report neck and shoulder pain</strong>, 
-yet fewer than 20% seek professional help. With 33.3% of Hong Kong&#39;s population 
-projected to be aged 65 or above by 2039, the demand for accessible, at-home 
-rehabilitation tools will only grow.</p>
-<p>The clinical gap is well-documented. Only <strong>35% of physiotherapy patients fully follow 
-their prescribed home exercise plans</strong> — without a daily guide or reminder, routines 
-are quickly abandoned. Older patients forget up to <strong>37% of a longer exercise list</strong> 
-after a single teaching session, even with written instruction sheets as a memory aid.</p>
+              <p>Frozen shoulder affects roughly <strong>3–5% of adults globally</strong>, but the numbers in Hong Kong are harder to ignore: <strong>90% of working adults report neck and shoulder pain</strong>, yet fewer than 20% seek professional help. With 33.3% of Hong Kong&#39;s population projected to be aged 65 or above by 2039, the need for accessible, at-home rehabilitation tools is only going to grow.</p>
+<p>The clinical gap is well-documented. Only <strong>35% of physiotherapy patients stick to their prescribed home exercise plans</strong>  without a daily guide or reminder, routines get dropped quickly. Older patients forget up to <strong>37% of a longer exercise list</strong> after a single teaching session, even with written instruction sheets to help.</p>
 <blockquote>
-<p>The problem is not a lack of medical knowledge — it is the absence of a tool that 
-bridges the clinic and everyday life, using hardware people already own.</p>
+<p>The problem isn&#39;t a lack of medical knowledge: it&#39;s the absence of a tool that connects the clinic to everyday life, using hardware people already own.</p>
 </blockquote>
-<p>Existing solutions either require expensive wearables, rely on passive video 
-demonstrations with no real-time feedback, or demand technical literacy that older 
-adults may not have. This app proposes a new direction for Hong Kong&#39;s physiotherapy 
-and rehabilitation sector: a motion-guided coach that runs entirely on the phone 
-already in your pocket — no equipment, no subscriptions, no barriers to entry.</p>
+<p>Existing solutions either require expensive wearables, rely on passive video demos with no real-time feedback, or assume a level of technical confidence that many older adults don&#39;t have. This app takes a different approach for Hong Kong&#39;s physiotherapy and rehabilitation space: a motion-guided coach that runs entirely on the phone already in your pocket — no equipment, no subscriptions, no barriers.</p>
             </div>
           </section>
 
@@ -134,24 +122,11 @@ already in your pocket — no equipment, no subscriptions, no barriers to entry.
             <p class="section-label" id="label-process">The Process</p>
             <div class="case-content">
               <h2>Concept &amp; Scope</h2>
-<p>Frozen Shoulder Home Coach guides users through three doctor-recommended rehabilitation 
-exercises — <strong>Table Slide</strong>, <strong>Wall Hand Slide</strong>, and <strong>Pendulum Side-to-Side</strong> — 
-using only the phone&#39;s built-in motion sensors. No wearables, no external equipment. 
-All three exercises are drawn from the Hospital Authority Hong Kong&#39;s official 
-<em>Adhesive Capsulitis Self-care Guide</em>.</p>
-<p>This version is a <strong>functional MVP built solo in 2 weeks</strong> as the second assignment 
-for SM3607. The three exercises represent a focused starting point — the longer-term 
-vision is a full rehabilitation library modelled after gym coaching apps, where 
-exercises can be progressively added as resources allow. The goal of this version 
-is to validate the core motion-detection approach and demonstrate a viable product 
-direction for Hong Kong&#39;s physiotherapy and rehabilitation sector.</p>
+<p>Frozen Shoulder Home Coach walks users through three doctor-recommended rehabilitation exercises: <strong>Table Slide</strong>, <strong>Wall Hand Slide</strong>, and <strong>Pendulum Side-to-Side</strong>, using only the phone&#39;s built-in motion sensors. No wearables, no external equipment. All three exercises come from the Hospital Authority Hong Kong&#39;s official <em>Adhesive Capsulitis Self-care Guide</em>.</p>
+<p>This version is a <strong>functional MVP built solo in 2 weeks</strong> as the second assignment for SM3607. The three exercises are a focused starting point, the longer-term vision is a full rehabilitation library similar to gym coaching apps, where more exercises can be added over time. The goal here is to validate the core motion-detection approach and show a workable product direction for Hong Kong&#39;s physiotherapy and rehabilitation space.</p>
 <hr>
 <h2>Reverse Engineering the Algorithms</h2>
-<p>The first approach was conventional: define expected motion characteristics and set 
-fixed thresholds manually. This broke down quickly. Threshold tuning required a 
-full reinstall cycle for every adjustment, and thresholds guessed from first 
-principles were consistently inaccurate — especially for the Pendulum, where the 
-acceleration profile was impossible to predict without seeing real data.</p>
+<p>The first approach was straightforward: define expected motion characteristics and set fixed thresholds manually. It fell apart quickly. Tuning thresholds meant a full reinstall cycle for every change, and guessed values were consistently off, especially for the Pendulum, where the acceleration profile was impossible to predict without real data.</p>
 <p>The turning point was recording actual movement data.</p>
 <div class="case-content-img-wrap"
                 onclick="openLightbox(7)"
@@ -162,12 +137,9 @@ acceleration profile was impossible to predict without seeing real data.</p>
               ><img src="../assets/projects/frontend-app/process_1.png" alt="raw data" loading="lazy" /></div>
 <ol>
 <li>Performed each exercise while logging raw accelerometer and gravity sensor output</li>
-<li>Used AI tools to visualise the time-series curves — making one correct repetition 
-clearly visible as a data pattern</li>
-<li>Compared correct movement curves against deliberately incorrect ones (diagonal 
-slides, too-fast swings, missing holds) to identify distinguishing signal features</li>
-<li><strong>Worked backwards from the data to the algorithm</strong> — deriving thresholds from 
-measured averages rather than inventing them from assumption</li>
+<li>Used AI tools to visualise the time-series curves: making one correct repetition clearly visible as a data pattern</li>
+<li>Compared correct movement curves against deliberately wrong ones (diagonal slides, too-fast swings, missing holds) to find the key signal differences</li>
+<li><strong>Worked backwards from the data to the algorithm</strong>: deriving thresholds from measured averages rather than guessing</li>
 </ol>
 <div class="case-content-img-wrap"
                 onclick="openLightbox(8)"
@@ -176,64 +148,38 @@ measured averages rather than inventing them from assumption</li>
                 aria-label="visualize data pattern"
                 onkeydown="if(event.key==='Enter')openLightbox(8)"
               ><img src="../assets/projects/frontend-app/process_2.png" alt="visualize data pattern" loading="lazy" /></div>
-<p>This process also solved an AI collaboration problem. Because these specific 
-rehabilitation gestures do not exist as training data in any public dataset, AI tools 
-had no domain knowledge to offer. By providing recorded sensor curves as context, 
-the AI could meaningfully assist with algorithm design — filling the knowledge gap 
-with real evidence rather than guesswork. The result was faster iteration and 
-significantly more accurate detection thresholds across all three exercises.</p>
+<p>This approach also solved an AI collaboration problem. Because these specific rehabilitation gestures don&#39;t exist in any public training dataset, AI tools had no useful domain knowledge to start with. By feeding in recorded sensor curves as context, the AI could actually help with algorithm design, using real evidence instead of guesswork. The result was faster iteration and much more accurate detection thresholds across all three exercises.</p>
 <hr>
 <h2>Algorithm Design: Matching Strategy to Motion</h2>
-<p>Each exercise required a different algorithmic strategy, determined by direct 
-observation of the movement&#39;s characteristics — not a generic template applied 
-uniformly.</p>
+<p>Each exercise needed a different algorithm, chosen based on how the movement actually looks, not a one-size-fits-all template.</p>
 <h3>Table Slide &amp; Wall Hand Slide — State Machine</h3>
-<p>Both exercises share a <strong>discrete, sequential structure</strong>: start position → controlled 
-slide → hold at end → return. This maps naturally to a state machine:</p>
+<p>Both exercises follow a <strong>clear, step-by-step structure</strong>: start position → controlled slide → hold at end → return. A state machine is a natural fit:</p>
 <p><code>IDLE → SLIDING_FORWARD → HOLDING → SLIDING_BACKWARD → IDLE</code></p>
 <ul>
-<li><code>TYPE_LINEAR_ACCELERATION</code> reads X/Y/Z motion; the relevant axis (Y) is treated 
-as the primary direction of travel</li>
-<li><code>TYPE_GRAVITY</code> confirms phone orientation — the detector refuses to count a rep 
-if the phone is not in the correct position (horizontal for Table Slide, vertical 
-for Wall Hand Slide)</li>
-<li>A <strong>2-second baseline calibration</strong> at IDLE prevents counting before the user is 
-properly positioned</li>
-<li><strong>Diagonal movement guards</strong>: if X or Z acceleration exceeds threshold at the 
-moment of entering a sliding phase, the rep is rejected and the state resets</li>
-<li><strong>Direction guards</strong> prevent small rebounds from being misread as new repetitions</li>
+<li><code>TYPE_LINEAR_ACCELERATION</code> reads X/Y/Z motion; the Y axis is treated as the main direction of travel</li>
+<li><code>TYPE_GRAVITY</code> checks phone orientation: the detector won&#39;t count a rep if the phone isn&#39;t in the right position (horizontal for Table Slide, vertical for Wall Hand Slide)</li>
+<li>A <strong>2-second baseline calibration</strong> at IDLE stops counting before the user is properly set up</li>
+<li><strong>Diagonal movement guards</strong>: if X or Z acceleration goes over threshold when entering a sliding phase, the rep is rejected and the state resets</li>
+<li><strong>Direction guards</strong> stop small rebounds from being counted as new repetitions</li>
 </ul>
 <h3>Pendulum — Peak Detection</h3>
-<p>The Pendulum is fundamentally different: it is <strong>rhythmic and continuous</strong>, with no 
-discrete hold phases or clear state boundaries. A state machine would create false 
-transitions on every oscillation.</p>
+<p>The Pendulum is a different kind of movement: it&#39;s <strong>rhythmic and continuous</strong>, with no clear hold phases or state boundaries. A state machine would produce false transitions on every swing.</p>
 <p>Instead, the algorithm detects <strong>valid left and right extremes</strong> of the swing arc:</p>
 <ul>
-<li>Z-axis tracks the lateral swing; a left extreme is confirmed when Z drops below 
-threshold <em>and</em> X contamination is low</li>
-<li>A right extreme is confirmed when Z rises above threshold under the same clean 
-conditions</li>
+<li>Z-axis tracks the lateral swing; a left extreme is confirmed when Z drops below threshold <em>and</em> X interference is low</li>
+<li>A right extreme is confirmed when Z rises above threshold under the same clean conditions</li>
 <li>One left extreme + one right extreme = one counted repetition</li>
-<li>A <strong>moving average smoother</strong> is applied continuously to reduce sensor noise 
-without introducing lag</li>
-<li>If X acceleration is disproportionately large at the moment of threshold crossing, 
-the swing is classified as diagonal and the count is not updated</li>
+<li>A <strong>moving average smoother</strong> runs continuously to reduce sensor noise without adding lag</li>
+<li>If X acceleration is too high at the moment of threshold crossing, the swing is flagged as diagonal and the count doesn&#39;t update</li>
 </ul>
-<p>The decision to use two entirely different strategies was driven by observation 
-of the real movement, not convention — the algorithm fits the motion, not the other 
-way around.</p>
+<p>The choice to use two completely different strategies came from watching the actual movements, the algorithm fits the motion, not the other way around.</p>
 <hr>
 <h2>UX Design Considerations</h2>
-<p>The app is designed for middle-aged and elderly users who may not be technically 
-confident. Key UX decisions:</p>
+<p>The app is designed for middle-aged and elderly users who may not be very comfortable with technology. Key UX decisions:</p>
 <ul>
-<li><strong>Pre-check screen</strong> before each exercise confirms phone orientation using sensor 
-data, with additional manual reminders for conditions the sensor cannot verify 
-(e.g., clear space around the user)</li>
-<li><strong>Large central rep counter</strong> and a single plain-language instruction sentence 
-during exercise — no information overload mid-movement</li>
-<li><strong>Today&#39;s progress</strong> on the home screen gives a clear daily completion state with 
-visual check marks — reducing the cognitive load of remembering what has been done</li>
+<li><strong>Pre-check screen</strong> before each exercise confirms phone orientation using sensor data, plus manual reminders for things the sensor can&#39;t verify (e.g., clear space around the user)</li>
+<li><strong>Large central rep counter</strong> and a single plain-language instruction during exercise, no extra information mid-movement</li>
+<li><strong>Today&#39;s progress</strong> on the home screen shows a clear daily completion state with visual check marks, so users don&#39;t have to remember what they&#39;ve already done</li>
 </ul>
             </div>
           </section>
@@ -242,33 +188,17 @@ visual check marks — reducing the cognitive load of remembering what has been 
             <p class="section-label" id="label-result">The Result</p>
             <div class="case-content">
               <blockquote>
-<p>&quot;Your app serves as a good starter for rehabilitation. The completeness of your 
-app is high.&quot;</p>
+<p>&quot;Your app serves as a good starter for rehabilitation. The completeness of your app is high.&quot;</p>
 <p>— Course Instructor, SM3607</p>
 </blockquote>
-<p>Delivered as a <strong>fully functional solo Android MVP in 2 weeks</strong>, covering the 
-complete rehabilitation flow from exercise selection through real-time motion 
-detection, rep counting, and daily progress tracking.</p>
+<p>Built as a <strong>fully functional solo Android MVP in 2 weeks</strong>, covering the full rehabilitation flow from exercise selection to real-time motion detection, rep counting, and daily progress tracking.</p>
 <ul>
-<li>3 distinct motion detection algorithms implemented, each independently designed 
-to match the specific kinematic structure of its exercise</li>
-<li>Real-time sensor fusion across <code>TYPE_LINEAR_ACCELERATION</code> and <code>TYPE_GRAVITY</code> 
-across all exercises</li>
-<li>Pre-check orientation validation, diagonal movement rejection, and baseline 
-calibration — all functional and tested against real movement data</li>
+<li>3 separate motion detection algorithms, each designed to fit the specific movement structure of its exercise</li>
+<li>Real-time sensor fusion using <code>TYPE_LINEAR_ACCELERATION</code> and <code>TYPE_GRAVITY</code> across all exercises</li>
+<li>Pre-check orientation validation, diagonal movement rejection, and baseline calibration, all tested against real movement data</li>
 </ul>
-<p><strong>One identified hardware limitation</strong> emerged during development: several exercises 
-require a relaxed, hanging arm while simultaneously holding the phone, creating a 
-tension between natural posture and device grip. A wrist-mounted form factor was 
-evaluated as a solution, but introduces a new trade-off — smartphone weight is 
-non-trivial and may compromise the quality of passive exercises like the Pendulum. 
-This remains the primary hardware design question for the next development phase.</p>
-<p>This version is a starting point. The architecture is designed to support a growing 
-exercise library — the roadmap mirrors the structure of gym coaching apps, where 
-movements are progressively added as the platform matures. The broader ambition is 
-to propose a scalable, wearable-free rehabilitation model for Hong Kong&#39;s 
-physiotherapy sector: clinical-grade guidance, delivered through a device every 
-patient already owns.</p>
+<p><strong>One hardware limitation came up during development</strong>: some exercises need the arm to hang relaxed while still holding the phone, which creates an awkward tension between natural posture and grip. A wrist-mounted form factor was considered as a fix, but that brings its own problem: a smartphone is heavy enough to affect passive exercises like the Pendulum. This is the main hardware question to sort out in the next phase.</p>
+<p>This version is a starting point. The architecture is built to support more exercises over time, the roadmap works like gym coaching apps, where movements are added as the platform grows. The bigger goal is to offer a wearable-free rehabilitation option for Hong Kong&#39;s physiotherapy space: proper guided exercise, on a device every patient already has.</p>
             </div>
           </section>
 

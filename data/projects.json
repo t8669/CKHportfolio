@@ -93,7 +93,7 @@
       "techStackInline": "Android • Full-Stack • Firebase • Cloud Functions",
       "tagline": "Rediscovering the soul of the city — one hidden log at a time.",
       "cardImage": {
-        "src": "../assets/projects/firebase-app/introGallery/CityLog_1.png",
+        "src": "assets/projects/firebase-app/introGallery/CityLog_1.png",
         "placeholderBg": "#e4eaf2",
         "alt": "citylog"
       },
