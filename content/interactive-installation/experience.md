@@ -36,7 +36,7 @@ with your tea.
 ## Zone 3 — Summon Your Tea Spirit
 
 Your Tea Spirit arrives on the tabletop as a volatile fog. Push the physical slider 
-across the table to scan and resolve it — the fog clears to reveal your character. 
+across the table to scan and resolve it, the fog clears to reveal your character. 
 The wall display toggles between your tea's **flavour science data** and your 
 Spirit's **personality lore**.
 

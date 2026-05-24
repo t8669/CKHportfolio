@@ -314,10 +314,11 @@ function renderMetaLinks(links) {
   return items.map(renderMetaLink).join("\n            ");
 }
 
-function renderOptionalSection(ref, slug, lightboxImages, nextIndexRef, { labelId, label }) {
+function renderOptionalSection(ref, slug, lightboxImages, nextIndexRef, { labelId, label, sectionClass = "" }) {
   if (!ref) return "";
   const html = renderSectionHtml(ref, slug, lightboxImages, nextIndexRef);
-  return `          <section class="case-section" aria-labelledby="${labelId}">
+  const sectionClasses = ["case-section", sectionClass].filter(Boolean).join(" ");
+  return `          <section class="${sectionClasses}" aria-labelledby="${labelId}">
             <p class="section-label" id="${labelId}">${label}</p>
             <div class="case-content">
               ${html}
@@ -471,7 +472,7 @@ function buildDetailContext(project) {
     project.slug,
     lightboxImages,
     nextIndexRef,
-    { labelId: "label-reference", label: "References" }
+    { labelId: "label-reference", label: "References", sectionClass: "case-section--reference" }
   );
 
   return {

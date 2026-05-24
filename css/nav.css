@@ -111,3 +111,12 @@
         font-size: var(--text-xs);
       }
     }
+
+    @media (max-width: 768px) {
+      .nav.nav--project {
+        /* 原 gap space-3(12px)、padding space-4/space-3(16/12px)、min-height 100px */
+        gap: var(--space-2);
+        padding: var(--space-3) var(--page-gutter) var(--space-2);
+        min-height: 0;
+      }
+    }

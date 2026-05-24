@@ -123,7 +123,7 @@ html:has(body.project-detail) {
 .project-tagline {
   font-size: var(--text-base);
   color: var(--color-text-muted);
-  max-width: 60ch;
+  max-width: 100%;
   line-height: 1.7;
 }
 
@@ -297,6 +297,13 @@ html:has(body.project-detail) {
 
 .case-content ol li {
   margin-bottom: var(--space-2);
+}
+
+/* References：長 URL 換行，避免撐出容器 */
+.case-section--reference .case-content ol li,
+.case-section--reference .case-content ol li a {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .case-content ul > li:last-child,
@@ -962,6 +969,21 @@ blockquote p {
 @media (max-width: 768px) {
   body.project-detail {
     --page-gutter: clamp(0.75rem, 4vw, 1.25rem);
+    /* 原 clamp(9.5rem, 24vh, 12.5rem) 在手機上比 nav 實高多出 ~40px 空白 */
+    padding-top: clamp(6.75rem, 17vh, 7.5rem);
+  }
+
+  html:has(body.project-detail) {
+    scroll-padding-top: clamp(6.75rem, 17vh, 7.5rem);
+  }
+
+  .back-btn {
+    padding-top: var(--space-2);
+  }
+
+  .project-hero {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-4);
   }
 
   .case-content {
